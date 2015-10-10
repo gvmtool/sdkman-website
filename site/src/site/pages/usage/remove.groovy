@@ -3,7 +3,7 @@ article {
     h2 { yield 'Remove Version' }
     p {
         yield 'Remove an installed version.'
-        pre { code '$ sdk remove scala 2.11.6' }
+        pre { code '$ sdk remove groovy 2.4.5' }
     }
 }
 br()

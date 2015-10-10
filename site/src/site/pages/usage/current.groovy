@@ -13,8 +13,8 @@ $ sdk current grails
         pre { code '''
 $ sdk current
   Using:
-  groovy: 2.1.0
-  scala: 2.11.7
+  gradle: 2.7
+  groovy: 2.4.5
 '''     }
 
     }
