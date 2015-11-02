@@ -37,7 +37,7 @@ Done installing!
         yield 'Need a '
         strong 'specific'
         yield ' version of an SDK? Simply qualify the version you require:'
-        pre { code '$ sdk install scala 2.11.7'  }
+        pre { code '$ sdk install groovy 2.4.5'  }
         yield 'All subsequent steps same as above.'
     }
 }
