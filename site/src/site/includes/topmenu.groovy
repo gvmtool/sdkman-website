@@ -8,8 +8,7 @@ div(class: 'navbar navbar-default navbar-static-top', role: 'navigation') {
                 span(class: 'icon-bar') {}
             }
             a(class: 'navbar-brand', href: relative('index.html')) {
-                i(class: 'fa fa-star') {}
-                yield ' SDKMAN!'
+                img(class: 'sdk-logo', src: 'img/logo.png') {}
             }
         }
         div(class: 'navbar-collapse collapse') {
