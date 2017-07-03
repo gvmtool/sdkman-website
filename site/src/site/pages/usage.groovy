@@ -7,7 +7,6 @@ layout 'layouts/main.groovy', true,
                         div(class: 'col-lg-3') {
                             include template: 'includes/usage-navbar.groovy'
                             br()
-                            include unescaped: 'html/twittersearch.html'
                         }
 
                         div(class: 'col-lg-8 col-lg-pull-0') {
