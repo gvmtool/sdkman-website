@@ -4,9 +4,7 @@ layout 'layouts/main.groovy', true,
             div(id: 'content', class: 'page-1') {
                 div(class: 'row') {
                     div(class: 'row-fluid') {
-                        div(class: 'col-lg-3') {
-                            include unescaped: 'html/twittersearch.html'
-                        }
+                        div(class: 'col-lg-3') {}
 
                         div(class: 'col-lg-8 col-lg-pull-0') {
                             h1 {
