@@ -46,10 +46,6 @@ pre {
     border-bottom: 5px solid #000;
     z-index: 0;
 }
-a.navbar-brand {
-    color: white !important;
-    font-size: 19px !important;
-}
 .navbar-brand img {
     height: 50px;
     margin-top: -15px;
@@ -109,6 +105,51 @@ a.navbar-brand {
 #main-paragraph {
     max-width: 1000px;
     margin: 10px auto;
+}
+
+.options-background {
+    margin-top: 100px;
+    background-color: #F2F2F2;
+    padding-bottom: 100px;
+}
+
+#options-title {
+    margin-top: 60px !important;
+    margin-bottom: 20px !important;
+}
+
+.option-wrapper {
+    padding: 10px 15px;
+}
+
+.option {
+    width: 95%;
+    min-width: 314px;
+    height: 500px;
+    border: 5px solid #000;
+}
+
+.option h3, p {
+    padding: 0 30px 0 30px;
+    text-align: center;
+}
+
+.dev {
+    background-color: #f9505d;
+}
+
+.ci {
+    background-color: #1890d3;
+}
+
+.enterprise {
+    background-color: #888888;
+}
+
+.option-img {
+    padding: 60px 0 22px 0;
+    display: block;
+    margin: auto;
 }
 
 @media (max-width: 1010px) {
