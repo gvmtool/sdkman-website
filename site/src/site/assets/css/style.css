@@ -152,6 +152,66 @@ pre {
     margin: auto;
 }
 
+.community-opinion {
+    text-align:       center;
+    background-color: #1890d3;
+    padding-top: 100px;
+    padding-bottom: 5px;
+}
+
+.opinion {
+    display: inline-block;
+    padding: 0px 40px;
+}
+
+.opinion:nth-child(2) {
+    position: relative;
+    top: 65px;
+}
+
+.bubble {
+    position: relative;
+    max-width: 520px;
+    padding: 5px 10px;
+    background-color: #ffffff;
+    max-height: 215px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.bubble:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    border-style: solid;
+    border-color: #ffffff transparent;
+    display: block;
+    width: 0;
+}
+
+.large.bubble {
+    max-height: 255px;
+}
+
+.right:after {
+    border-width: 20px 0 0 20px;
+    right: 200px;
+}
+
+.left:after {
+    border-width: 20px 20px 0 0;
+    left: 200px;
+}
+
+.carousel-indicators {
+    position: relative !important;
+    margin-top: -6px;
+}
+
+.carousel-inner {
+    min-height: 300px;
+}
+
 @media (max-width: 1010px) {
     #band {
         background-size: 68%;
@@ -434,7 +494,6 @@ h8 {
     text-align: center;
     font-size: 14px;
     padding: 20px 0 30px;
-    margin-top: 30px;
     color: #AAA
 }
 
