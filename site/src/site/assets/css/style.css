@@ -212,6 +212,20 @@ pre {
     min-height: 300px;
 }
 
+.city-img {
+    width: 100%;
+}
+
+@media (max-width: 1203px) {
+    .carousel-inner {
+        height: 532px;
+    }
+
+    .carousel-indicators {
+        visibility: hidden;
+    }
+}
+
 @media (max-width: 1010px) {
     #band {
         background-size: 68%;
