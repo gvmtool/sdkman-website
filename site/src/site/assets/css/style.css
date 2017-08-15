@@ -122,6 +122,11 @@ pre {
     padding: 10px 15px;
 }
 
+.option-wrapper a, .option-wrapper a:hover {
+    text-decoration: none;
+    color: #343437;
+}
+
 .option {
     width: 95%;
     min-width: 314px;
@@ -214,6 +219,21 @@ pre {
 
 .city-img {
     width: 100%;
+}
+
+/* specific to contact.html */
+
+.contact-form {
+    text-align: center;
+    height: 1000px;
+}
+
+.contact-input {
+    margin-bottom: 20px;
+}
+
+.contact-btn {
+    background-color: #0076C6;
 }
 
 @media (max-width: 1203px) {

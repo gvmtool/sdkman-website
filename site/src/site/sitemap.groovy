@@ -5,6 +5,7 @@ menu {
         item 'Usage',                       'usage.html'
 //        item 'API',                         'api.html'
         item 'Vendors',                     'vendors.html'
+        item 'Contact',                     'contact.html'
     }
 
     group('Socialize') {
@@ -24,5 +25,6 @@ pages {
     page 'usage', 'usage'
 //    page 'api', 'api'
     page 'vendors', 'vendors'
+    page 'contact', 'contact'
     page '404','404', [:]
 }
