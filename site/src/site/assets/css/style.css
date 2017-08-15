@@ -134,7 +134,7 @@ pre {
     border: 5px solid #000;
 }
 
-.option h3, p {
+.option h3, .option p {
     padding: 0 30px 0 30px;
     text-align: center;
 }
