@@ -129,30 +129,69 @@ pre {
 
 .option {
     width: 95%;
+    text-align: center;
     min-width: 314px;
     height: 500px;
     border: 5px solid #000;
 }
 
+.option h3 {
+    text-transform: uppercase;
+}
+
+.option p {
+    font-size: 15px;
+}
+
 .option h3, .option p {
-    padding: 0 30px 0 30px;
+    padding: 0 19px 0 19px;
     text-align: center;
+}
+
+.option-btn {
+    text-transform: uppercase;
+    color: #ffffff !important;
+    font-size: 13px;
 }
 
 .dev {
     background-color: #f9505d;
 }
 
+.dev.option a {
+    background-color: #fb2127;
+}
+
+.dev.option a:hover {
+    color: #f9505d;
+}
+
 .ci {
     background-color: #1890d3;
+}
+
+.ci.option a {
+    background-color: #0076C6;
+}
+
+.ci.option a:hover {
+    color: #1890d3;
 }
 
 .enterprise {
     background-color: #888888;
 }
 
+.enterprise.option a {
+    background-color: #111111;
+}
+
+.enterprise.option a:hover {
+    color: #888888;
+}
+
 .option-img {
-    padding: 60px 0 22px 0;
+    padding: 35px 0 15px 0;
     display: block;
     margin: auto;
 }
