@@ -316,6 +316,14 @@ pre {
 }
 
 @media (max-width: 1203px) {
+    .flip-container:hover {
+        pointer-events: none;
+    }
+
+    .flip-container button, .flip-container a {
+        pointer-events: all;
+    }
+
     .carousel-inner {
         height: 532px;
     }
