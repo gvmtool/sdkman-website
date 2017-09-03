@@ -108,13 +108,13 @@
                                 <img class="option-img" src="img/chain-web.png"/>
                                 <h3>Developers</h3>
                                 <p>Rate-limited free version for Developer Machines</p>
-                                <a class="btn option-btn" href="contact.html">Contact</a>
+                                <button type="button" class="btn option-btn" data-toggle="modal" data-target="#myModal">Contact</button>
                             </div>
                         </div>
                         <div class="back">
                             <div class="ci option">
                                 <p>We recognise that our tool is very handy for use in automated environments. In particular, Build Pipelines can benefit greatly by having access to <b>all the latest versions</b> of the SDKs required to run a build. With a dedicated Hosted Cloud Instance, your builds will be stable with SDKMAN! <b>APIs dedicated</b> to serve only your builds.</p>
-                                <a class="btn option-btn" href="contact.html">Contact</a>
+                                <button type="button" class="btn option-btn" data-toggle="modal" data-target="#myModal">Contact</button>
                             </div>
                         </div>
                     </div>
@@ -129,13 +129,13 @@
                                 <img class="option-img" src="img/crypton-web.png"/>
                                 <h3>Corporate Enterprises</h3>
                                 <p>An on-premises version for Firewalled environments with full Administrative Access</p>
-                                <a class="btn option-btn" href="contact.html">Contact</a>
+                                <button type="button" class="btn option-btn" data-toggle="modal" data-target="#myModal">Contact</button>
                             </div>
                         </div>
                         <div class="back">
                             <div class="enterprise option">
                                 <p>Corporate work environments often require heightened <b>security</b> and <b>restricted internet access</b>. However, Developers and Devops Engineers still need to perform their work and install the tools. SDKMAN! provides the solution with an On-Premises version of it's software.An Administrator has full control over what is hosted on the On-Premises instance for publishing new software and versions <b>(REST API available)</b>. It can be backed by any Binary Repository, making it a stand-alone solution for firewalled environments. Maintain a secure perimeter while keeping your Developers and Build Pipelines productive!</p>
-                                <a class="btn option-btn" href="contact.html">Contact</a>
+                                <button type="button" class="btn option-btn" data-toggle="modal" data-target="#myModal">Contact</button>
                             </div>
                         </div>
                     </div>
@@ -176,3 +176,30 @@
             <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
     </div>
+
+    <!-- Modal Contact Form -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Get in touch!</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <textarea type="text" class="form-control" id="message" name="message" placeholder="Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary contact-btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+

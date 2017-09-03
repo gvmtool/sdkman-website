@@ -217,11 +217,11 @@ pre {
     background-color: #1890d3;
 }
 
-.ci.option a {
+.ci.option button {
     background-color: #0076C6;
 }
 
-.ci.option a:hover {
+.ci.option button:hover {
     color: #1890d3;
 }
 
@@ -229,11 +229,11 @@ pre {
     background-color: #888888;
 }
 
-.enterprise.option a {
+.enterprise.option button {
     background-color: #111111;
 }
 
-.enterprise.option a:hover {
+.enterprise.option button:hover {
     color: #888888;
 }
 
@@ -307,19 +307,12 @@ pre {
     width: 100%;
 }
 
-/* specific to contact.html */
-
-.contact-form {
-    text-align: center;
-    height: 1000px;
-}
-
-.contact-input {
-    margin-bottom: 20px;
-}
-
 .contact-btn {
     background-color: #0076C6;
+}
+
+.modal-backdrop {
+    z-index: -1;
 }
 
 @media (max-width: 1203px) {
