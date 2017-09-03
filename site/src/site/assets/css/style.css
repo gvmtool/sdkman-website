@@ -281,7 +281,7 @@ pre {
 }
 
 .large.bubble {
-    max-height: 255px;
+    max-height: 265px;
 }
 
 .right:after {
@@ -294,17 +294,8 @@ pre {
     left: 200px;
 }
 
-.carousel-indicators {
-    position: relative !important;
-    margin-top: -6px;
-}
-
-.carousel-inner {
-    min-height: 300px;
-}
-
 .city-img {
-    width: 100%;
+    width: 70%;
 }
 
 .contact-btn {
@@ -315,6 +306,13 @@ pre {
     z-index: -1;
 }
 
+@media (max-width: 1298px) {
+    .large.bubble {
+        margin-top: 125px;
+        margin-bottom: 25px;
+    }
+}
+
 @media (max-width: 1203px) {
     .flip-container:hover {
         pointer-events: none;
@@ -322,14 +320,6 @@ pre {
 
     .flip-container button, .flip-container a {
         pointer-events: all;
-    }
-
-    .carousel-inner {
-        height: 532px;
-    }
-
-    .carousel-indicators {
-        visibility: hidden;
     }
 }
 
