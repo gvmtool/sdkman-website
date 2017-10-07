@@ -137,7 +137,7 @@ pre {
 .flip-container, .front, .back {
     width: 100%;
     min-width: 320px;
-    height: 500px;
+    height: 535px;
 }
 
 .flipper {
@@ -176,7 +176,7 @@ pre {
 .option {
     text-align: center;
     min-width: 314px;
-    height: 500px;
+    height: 535px;
     border: 5px solid #000;
 }
 
@@ -194,11 +194,13 @@ pre {
 }
 
 .option-btn {
+    position: absolute;
+    bottom: 25px;
+    margin: 0 -40px;
     text-transform: uppercase;
     text-decoration: none;
     color: #ffffff !important;
     font-size: 13px;
-    bottom: 0;
 }
 
 .dev {
@@ -412,7 +414,12 @@ pre {
 @media (max-width: 690px) {
     .event-logo {
         height: 60px;
-    }}
+    }
+
+    .option h3, .option p {
+        padding: 0 9px 0 9px;
+    }
+}
 
 @media (max-width: 475px) {
     .event-logo {
