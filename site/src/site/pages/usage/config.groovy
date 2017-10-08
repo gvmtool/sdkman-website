@@ -17,9 +17,6 @@ sdkman_auto_selfupdate=true|false
 # HERE BE DRAGONS....
 sdkman_insecure_ssl=true|false
 
-# disable GVM alias, for users of the Go Version Manager
-sdkman_disable_gvm_alias=true|false
-
 # configure curl timeouts
 sdkman_curl_connect_timeout=5
 sdkman_curl_max_time=4
