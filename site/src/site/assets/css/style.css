@@ -110,7 +110,7 @@ pre {
 .options-background {
     margin-top: 100px;
     background-color: #F2F2F2;
-    padding-bottom: 100px;
+    padding-bottom: 235px;
 }
 
 #options-title {
@@ -246,10 +246,49 @@ pre {
 }
 
 .community-opinion {
-    text-align:       center;
+    text-align: center;
     background-color: #1890d3;
     padding-top: 100px;
     padding-bottom: 5px;
+}
+
+.nested-wrapper {
+    text-align: center;
+    margin-bottom: -330px;
+    position: relative;
+}
+
+.nested-opinion {
+    display: inline-block;
+    position: relative;
+}
+
+.nested-opinion.first {
+    margin-left: -150px;
+    top: 50px;
+}
+
+.nested-opinion.second {
+    bottom: 18px;
+}
+
+.nested-opinion:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    height: 110%;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.nested-opinion.first:after {
+    border-radius: 10px;
+    background: rgba(24, 144, 211, 0.5);
+}
+
+.nested-opinion.second:after {
+    background: rgba(24, 144, 211, 0.8);
 }
 
 .opinion {
@@ -312,6 +351,32 @@ pre {
     .large.bubble {
         margin-top: 125px;
         margin-bottom: 25px;
+    }
+
+    .options-background {
+        padding-bottom: 50px;
+    }
+
+    .nested-wrapper {
+        margin-bottom: -386px;
+    }
+
+    .nested-opinion.first {
+        top: 180px;
+    }
+
+    .nested-opinion.second {
+        bottom: -200px;
+    }
+}
+
+@media (max-width: 894px) {
+    .nested-opinion {
+        display: none;
+    }
+
+    .nested-wrapper {
+        margin-bottom: 0px;
     }
 }
 
