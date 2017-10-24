@@ -392,21 +392,21 @@ pre {
 
 @media (max-width: 1010px) {
     #band {
-        background-size: 68%;
+        background-size: 64%;
         height: 366px;
     }
 }
 
 @media (max-width: 690px) {
     #band {
-        background-size: 80%;
+        background-size: 67%;
         height: 255px;
     }
 }
 
 @media (max-width: 475px) {
     #band {
-        background-size: 70%;
+        background-size: 57%;
         height: 155px;
     }
 }
