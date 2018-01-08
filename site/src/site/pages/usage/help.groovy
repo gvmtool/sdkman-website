@@ -17,7 +17,7 @@ Usage: sdk <command> <candidate> [version]
        use       or u    <candidate> [version]
        default   or d    <candidate> [version]
        current   or c    [candidate]
-       outdated  or o    [candidate]
+       upgrade   or ug   [candidate]
        version   or v
        broadcast or b
        help      or h

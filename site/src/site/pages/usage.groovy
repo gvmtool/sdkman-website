@@ -22,7 +22,7 @@ layout 'layouts/main.groovy', true,
                             include template: 'pages/usage/use.groovy'
                             include template: 'pages/usage/default.groovy'
                             include template: 'pages/usage/current.groovy'
-                            include template: 'pages/usage/outdated.groovy'
+                            include template: 'pages/usage/upgrade.groovy'
                             include template: 'pages/usage/version.groovy'
                             include template: 'pages/usage/broadcast.groovy'
                             include template: 'pages/usage/offline.groovy'

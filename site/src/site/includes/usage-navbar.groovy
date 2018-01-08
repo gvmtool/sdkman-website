@@ -9,7 +9,7 @@ ul(class: 'nav-sidebar') {
     li { a(href: '#use', class: 'anchor-link', 'Use Version') }
     li { a(href: '#default', class: 'anchor-link', 'Default Version') }
     li { a(href: '#current', class: 'anchor-link', 'Current Version') }
-    li { a(href: '#outdated', class: 'anchor-link', 'Outdated Version') }
+    li { a(href: '#upgrade', class: 'anchor-link', 'Upgrade Version') }
     li { a(href: '#version', class: 'anchor-link', 'Version') }
     li { a(href: '#broadcast', class: 'anchor-link', 'Broadcast Messages') }
     li { a(href: '#offline', class: 'anchor-link', 'Offline Mode') }
