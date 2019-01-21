@@ -62,8 +62,12 @@ Done installing!
                     All subsequent steps same as above.
                     </p><a name='localversion'></a><h4>Install Local Version(s)</h4>
                     <p>
-                        Need a snapshot? Already have a local installation? Setup a local version:
+                        Using a snapshot version? Already have a local installation? Setup a local version by specifying the path to the local installation:
                     <pre><code>$ sdk install groovy 3.0.0-SNAPSHOT /path/to/groovy-3.0.0-SNAPSHOT</code></pre>
+                    <pre><code>$ sdk install java 10-zulu-local /Library/Java/JavaVirtualMachines/zulu-10.jdk/Contents/Home</code></pre>
+                    Note that the local version name (<em>3.0.0-SNAPSHOT</em> and
+                    <em>10-zulu-local</em> in the examples above) must be a unique name
+                    which is not already in the list of available version names.
                     </p>
                 </article>
                 <br/>
@@ -73,6 +77,7 @@ Done installing!
                     <p>
                         Remove an installed version.
                     <pre><code>$ sdk uninstall scala 2.11.6</code></pre>
+                    Note that removing a local version will not remove the local installation.
                     </p>
                 </article>
                 <br/>
