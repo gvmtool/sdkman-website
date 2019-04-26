@@ -12,7 +12,7 @@ before_script:
 
 script:
   - ./sbt clean compile docker:publishLocal
-  - docker run -d -p 9000:9000 --net=host sdkman/sdkman-website:1.0.0-SNAPSHOT
+  - docker run -d -p 9000:9000 --net=host sdkman/sdkman-website:0.51.0
   - ./sbt test
 
 after_success:
