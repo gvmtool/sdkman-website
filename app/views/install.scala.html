@@ -8,7 +8,7 @@
                 <h1><i class='fa fa-cloud-download'></i> Installation</h1>
                 @includes.advertisement()
                 <article><p>Installing SDKMAN! on UNIX-like platforms is as easy as ever.
-                    SDKMAN! installs smoothly on Mac OSX, Linux, Cygwin,
+                    SDKMAN! installs smoothly on Mac OSX, Linux, Cygwin, WLS,
                     Solaris and FreeBSD. We also support Bash and ZSH shells.<br/>Simply open a new
                     terminal and enter: </p>
                     <pre><code>$ curl -s "https://get.sdkman.io" | bash</code></pre>
@@ -24,11 +24,14 @@
                 <article><h3>Windows Installation</h3>
                     <p>Several options exist for installing SDKMAN! on Windows today.</p>
                     <p>The first solution involves installing <a
+                            href='https://docs.microsoft.com/en-us/windows/wsl/install-win10'>Windows Linux Subsystem</a>
+                        (WLS) prior to attempting SDKMAN installation. You need a basic toolchain including bash, zip, 
+                        unzip, and curl (tar and gzip required for special cases). Most likely it will work out
+                        of the box.</p>
+                     <p>Another solution involves installing <a
                             href='https://www.cygwin.com/install.html'>Cygwin</a> prior to
                         attempting SDKMAN installation. For our software to function, we require
-                        that Cygwin
-                        is installed with a basic toolchain including bash, zip, unzip, and curl.
-                        (tar and gzip required for special cases)</p>
+                        that Cygwin is installed with the same toolchain as described for WLS.</p>
                     <p>The second solution is for Git users using the <a
                             href='https://git-scm.com/download/win'>Git Bash for Windows</a>
                         environment. In order for this to work, the environment needs to be
@@ -44,7 +47,7 @@
                     <p><strong>Please be aware that as SDKMAN is written in bash, it requires a bash
                         environment
                         to be present. SDKMAN can not be installed natively on Windows and requires
-                        Cygwin or MSYS+MinGW.</strong></p></article>
+                        WLS, Cygwin or MSYS+MinGW.</strong></p></article>
                 <article><h3>Beta Channel</h3>
                     <p>For the more adventurous among us, we have a beta channel.
                         All new CLI features will first be rolled out to this group of users for
