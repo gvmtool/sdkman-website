@@ -75,6 +75,13 @@ $ rm -rf ~/.sdkman</code></pre>
                     folder.It is also important that the folder does not exist as SDKMAN! will
                     attempt to create it.
                 </article>
+                <article><h3>Installing without Modifying Shell Config</h3>There are situations where
+                    it isn't appropriate for the installer to modify your shell config automatically,
+                    such as unattended installs or when reinstalling.  In those situations, appending
+                    <code>rcupdate=false</code> as a parameter when downloading the installer will cause
+                    it to skip that portion of the installation process.
+                    <pre><code>$ curl -s 'https://get.sdkman.io?rcupdate=false' | bash</code></pre>
+                </article>
                 <p>That&apos;s all there is to it! Next we will look at <a href='/usage'>Usage</a>.
                 </p></div>
         </div>
