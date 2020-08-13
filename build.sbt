@@ -6,7 +6,7 @@ name := """sdkman-website"""
 
 organization := "io.sdkman"
 
-version := "1.0.0-SNAPSHOT"
+version := "0.64.0"
 
 packageName in Docker := "sdkman/sdkman-website"
 
