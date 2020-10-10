@@ -225,11 +225,35 @@ java=x.y.z.hs-adpt</code></pre>
                     You should see output that looks something like this:
                     <pre><code>Using java version x.y.z.hs-adpt in this shell.</code></pre>
                     Your path has now also been updated to use any of these SDKs in your current shell.
-                    </p>
-                    <p>
+                    When leaving a project, you may want to reset the SDKs to their default version.
+                    This can be achieved by entering:
+                    <pre><code>
+$ sdk env clear
+Restored java version to x.y.z.hs-adpt (default)
+                    </code></pre>
+                    Especially after checking out a foreign project, you may be missing some SDKs specified in the project's
+                    <code>.sdkmanrc</code> file. To install the missings SDKs just type:
+                    <pre><code>
+$ sdk env install
+
+Downloading: java x.y.z.hs-adpt
+
+In progress...
+
+######################################################################## 100,0%
+
+Repackaging Java x.y.z.hs-adpt...
+
+Done repackaging...
+
+Installing: java x.y.z.hs-adpt
+Done installing!
+                </code></pre>
                     Do you want to switch SDK versions automatically when you <code>cd</code> into a
                     directory? This can be done by setting the <code>sdkman_auto_env=true</code> in
                     the SDKMAN configuration.
+                    Note that this will also reset any project-specific SDKs to their default version
+                    when leaving the directory.
                     </p>
                 </article>
                 <br/>
@@ -361,7 +385,7 @@ Adding new candidates(s): kotlin
                         performed:
                     <h4>Flush storage</h4>
                     <pre><code>$ sdk flush</code></pre>
-                    This flushes out all archives and the temporary storage folder but doesn not
+                    This flushes out all archives and the temporary storage folder, but not
                     the broadcast cache.
                     <h4>Broadcast</h4>
                     <pre><code>$ sdk flush broadcast</code></pre>
