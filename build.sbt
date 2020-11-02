@@ -28,6 +28,6 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
   ws,
   guice,
-  "io.sdkman" %% "sdkman-mongodb-persistence" % "1.0",
+  "io.sdkman" %% "sdkman-mongodb-persistence" % "1.3",
   "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2",
   "com.iheart" %% "ficus" % "1.4.7")
