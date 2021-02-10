@@ -10,6 +10,7 @@
                     <li><a href='#access' class='anchor-link'>Access</a></li>
                     <li><a href='#endpoints' class='anchor-link'>Endpoints</a></li>
                     <li><a href='#gradleplugin' class='anchor-link'>Gradle SDK Vendor Plugin</a>
+                    <li><a href='#mavenplugin' class='anchor-link'>Maven SDK Vendor Plugin</a>
                     </li>
                 </ul>
                 <br/></div>
@@ -107,6 +108,28 @@ https://vendors.sdkman.io/announce/struct
                     </ul>
                     For more details of about this plugin, as well as how to configure it, please
                     refer to the <a href='https://github.com/sdkman/gradle-sdkvendor-plugin'>Github
+                        Page</a> for the project.</p></article>
+                <article><a name='mavenplugin'></a>
+                    <h3>Maven SDK Vendor Plugin</h3>
+                    <p>If fiddling with cURL (or HttpClient) or Gradle isn’t your thing, you could consider
+                        using our Maven plugin. The plugin allows the release to be done as a side
+                        effect of your CI build! It exposes several useful goals like:
+                    <ul>
+                        <li><code>release</code></li>
+                        <li><code>default</code></li>
+                        <li><code>announce</code></li>
+                    </ul>
+                    It also exposes some convenience goals that roll the above into single goals:
+                    <ul>
+                        <li><code>major-release</code>: performs release, default and structured
+                            announce
+                        </li>
+                        <li><code>minor-release</code>: performs release and structured announce,
+                            <em>no</em> default
+                        </li>
+                    </ul>
+                    For more details of about this plugin, as well as how to configure it, please
+                    refer to the <a href='https://github.com/sdkman/sdkman-vendor-maven-plugin'>Github
                         Page</a> for the project.</p></article>
             </div>
         </div>
