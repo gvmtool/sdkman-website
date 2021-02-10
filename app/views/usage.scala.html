@@ -16,6 +16,7 @@
                     <li><a href='#use' class='anchor-link'>Use Version</a></li>
                     <li><a href='#default' class='anchor-link'>Default Version</a></li>
                     <li><a href='#current' class='anchor-link'>Current Version</a></li>
+                    <li><a href='#completion' class='anchor-link'>Shell Completion</a></li>
                     <li><a href='#env' class='anchor-link'>Env Command</a></li>
                     <li><a href='#upgrade' class='anchor-link'>Upgrade Versions</a></li>
                     <li><a href='#version' class='anchor-link'>Version</a></li>
@@ -201,6 +202,37 @@ java: 8u111
 scala: 2.12.1
 </code></pre>
                     </p>
+                </article>
+                <br/>
+                <p>
+                    <a name='completion'></a>
+                    <h2>Shell Completion</h2>
+                    <p>
+                    With SDKMAN!'s rich set of commands and subcommands, it can sometimes be hard to remember which
+                    commands are supported or which subcommands are allowed by a command.
+                    Wouldn't it be nice if the shell would autocomplete them for you?
+                    Luckily, SDKMAN! comes packaged with shell completions for both Bash and Zsh (not supported yet).
+                    To enable shell completion for the current session, just issue the following command:
+                    <pre><code>source <(sdk env bash)</code></pre>
+                    Typing <code>sdk</code> followed by two TABs will now bring up the list of possible top-level commands:
+<pre><code>
+$ sdk &lt;tab&gt;&lt;tab&gt;
+broadcast   current     env         help        install     offline     uninstall   upgrade     version
+completion  default     flush       home        list        selfupdate  update      use
+</code></pre>
+                    When double-tapping after entering a top-level command, the list of subcommands is shown:
+<pre><code>
+$ sdk env &lt;tab&gt;&lt;tab&gt;
+clear    init     install
+</code></pre>
+                    Note that shell completion is currently not supported for candidates and versions.
+                    <p>
+                    </p>
+                    To permanently enable shell completion, add it to your <code>.bashrc</code> (Linux)
+                    <code>.bash_profile</code> (Mac), or <code>.profile</code> (Unix), right after the
+                    initialisation snippet:
+                    <pre><code>source <(sdk env bash)</code></pre>
+                </p>
                 </article>
                 <br/>
                 <article>
