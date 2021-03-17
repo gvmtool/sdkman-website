@@ -213,7 +213,7 @@ scala: 2.12.1
                     Wouldn't it be nice if the shell would autocomplete them for you?
                     Luckily, SDKMAN! comes packaged with shell completions for Bash.
                     To enable shell completion for the current session, just issue the following command:
-                    <pre><code>source <(sdk env bash)</code></pre>
+                    <pre><code>source <(sdk completion bash)</code></pre>
                     Typing <code>sdk</code> followed by two TABs will now bring up the list of possible top-level commands:
 <pre><code>
 $ sdk &lt;tab&gt;&lt;tab&gt;
@@ -222,7 +222,7 @@ completion  default     ...
 </code></pre>
                     Tabbing twice after a top-level command will result in showing a list of subcommands:
 <pre><code>
-$ sdk env &lt;tab&gt;&lt;tab&gt;
+$ sdk completion &lt;tab&gt;&lt;tab&gt;
 clear    init     install
 </code></pre>
                     Note that shell completion is currently not supported for candidates and versions.
@@ -230,7 +230,7 @@ clear    init     install
                     </p>
                     To permanently enable shell completion, add it to your <code>.bashrc</code> (Unix-like platforms)
                     or <code>.bash_profile</code> (Mac OSX), right after the initialisation snippet:
-                    <pre><code>source <(sdk env bash)</code></pre>
+                    <pre><code>source <(sdk completion bash)</code></pre>
                 </p>
                 </article>
                 <br/>
