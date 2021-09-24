@@ -33,8 +33,7 @@ class ContextualController @Inject()(cc: ControllerComponents,
   }
 
   def jdks = Action.async { _ =>
-    val jdkVendors = conf.as[Seq[Jdk]]("jdks.vendors")
-    Future.successful(Ok(views.html.jdks(jdkVendors)))
+    Future.successful(Ok(views.html.jdks(conf.as[Seq[Jdk]]("jdks.vendors"))))
   }
 
   def sdks = Action.async { _ =>

@@ -6,8 +6,8 @@
             <div class='col-lg-3'>
                 <ul class='nav-sidebar'>
                     <li class='active'><a href='/jdks'><strong>Available JDKs</strong></a></li>
-                    @for(j <- jdks) {
-                    <li><a href='#@{j.vendor}' class='anchor-link'>@{j.distribution}: <em>@{j.vendor}</em></a></li>
+                    @for(jdk <- jdks) {
+                    <li><a href='#@{jdk.id}' class='anchor-link'>@{jdk.distribution} - <em>@{jdk.vendor}</em></a></li>
                     }
                 </ul>
             </div>
@@ -16,10 +16,9 @@
                 @includes.advertisement()
                 <ul>
                     @for(jdk <- jdks) {
-                    <a name='@jdk.vendor'></a>
+                    <a name='@jdk.id'></a>
                     <li>
-                        <h4>@jdk.distribution</h4>
-                        <a href='@jdk.url' target='_blank'><h5>@jdk.vendor</h5></a>
+                        <h4><a href='@jdk.url' target='_blank'>@jdk.distribution</a> (@jdk.vendor)</h4>
                         <p>@jdk.description</p>
                         <code>$ sdk install java x.y.z-@jdk.id</code>
                         <hr/>
