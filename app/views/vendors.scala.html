@@ -53,10 +53,19 @@ curl -X POST \
 -H "Consumer-Token: CONSUMER_TOKEN" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
--d '{"candidate": "groovy", "version": "2.4.2", "url": "http://dl.bintray.com/groovy/maven/groovy-binary-2.4.2.zip"}' \
+-d '{"candidate": "groovy", "version": "2.4.2", "url": "http://dl.bintray.com/groovy/maven/groovy-binary-2.4.6.zip", "checksums": { "MD5": "82d265186a651edb53bf187487966b92" } }' \
 https://vendors.sdkman.io/release
                     </code></pre>
-                    </p><br/>
+                    Supported checksum algorithms:
+                    <ul>
+                        <li>MD5</li>
+                        <li>SHA-1</li>
+                        <li>SHA-224</li>
+                        <li>SHA-256</li>
+                        <li>SHA-384</li>
+                        <li>SHA-512</li>
+                    </ul>
+                    </p>
                     <p><h4>Set existing Version as Default for Candidate</h4>When calling this
                     endpoint for an existing Candidate Version, it will make it the Default Version
                     for that Candidate. This makes a Minor release a Major release!
