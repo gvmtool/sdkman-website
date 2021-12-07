@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:500,700|Open+Sans:400,600);
 
-html, code, kbd, pre, samp {
+html, code, var, kbd, pre, samp {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
 }
@@ -540,7 +540,7 @@ article .content time {
     color: orange
 }
 
-code, kbd, pre, samp {
+code, var, kbd, pre, samp {
     font-family: "Source Code Pro", "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace
 }
 
@@ -1326,4 +1326,16 @@ html, body, .st-container, .st-pusher, .st-content {
 #content #toc ul {
     list-style-type: none;
     padding-left: .2em
+}
+code::before {
+    display: inline;
+    content: '$ ';
+}
+var {
+    padding: 2px 4px;
+    font-size: 90%;
+    font-style: normal;   
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px;
 }

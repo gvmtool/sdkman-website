@@ -11,15 +11,15 @@
                     SDKMAN! installs smoothly on macOS, Linux, WSL, Cygwin,
                     Solaris and FreeBSD. We also support Bash and ZSH shells.<br/>Simply open a new
                     terminal and enter: </p>
-                    <pre><code>$ curl -s "https://get.sdkman.io" | bash</code></pre>
+                    <pre><code>curl -s "https://get.sdkman.io" | bash</code></pre>
                     <p>Follow the instructions on-screen to complete installation.<br/>Next, open a
                         new terminal <b>or</b> enter:</p>
-                    <pre><code>$ source "$HOME/.sdkman/bin/sdkman-init.sh"</code></pre>
+                    <pre><code>source "$HOME/.sdkman/bin/sdkman-init.sh"</code></pre>
                     <p>Lastly, run the following code snippet to ensure that installation
                         succeeded:</p>
-                    <pre><code>$ sdk version</code></pre>
+                    <pre><code>sdk version</code></pre>
                     <p>If all went well, the version should be displayed. Something like:</p>
-                    <pre><code>  sdkman 5.0.0+51</code></pre>
+                    <pre><code>sdkman 5.0.0+51</code></pre>
                 </article>
                 <article><h3>Windows Installation</h3>
                     <p>Several options exist for installing SDKMAN! on Windows today.</p>
@@ -43,36 +43,32 @@
                         Beta versions can be considered stable for the most part, but might
                         occasionally break.
                         To join the beta channel, you can install it directly as follows:
-                        <pre><code>$ curl -s "https://beta.sdkman.io" | bash</code></pre>
+                        <pre><code>curl -s "https://beta.sdkman.io" | bash</code></pre>
                         If you already have the stable version installed, simply update the
-                        <code>~/.sdkman/etc/config</code> file as follows:
+                        <var>~/.sdkman/etc/config</var> file as follows:
                     <pre><code>sdkman_beta_channel=true</code></pre>
                     Next, open a new terminal and perform a forced update with:
-                    <pre><code>$ sdk selfupdate force</code></pre>
+                    <pre><code>sdk selfupdate force</code></pre>
                     To leave the beta channel, simply set the above config back to
-                    <code>false</code> and follow the same procedure.</p></article>
+                    <var>false</var> and follow the same procedure.</p></article>
                 <article><h3>Uninstallation</h3>In the unlikely event that you would like to
                     uninstall SDKMAN!, we don&apos;t have
                     an automated way of doing this yet. If you really do want to remove it from your
                     system, it is very easy to do so.The following will guide you through backing
                     up, then removing the entire installation from your system.
-                    <pre><code>
-tar zcvf ~/sdkman-backup_$(date +%F-%kh%M).tar.gz -C ~/ .sdkman
-$ rm -rf ~/.sdkman</code></pre>
+		    <pre><code>tar zcvf ~/sdkman-backup_$(date +%F-%kh%M).tar.gz -C ~/ .sdkman</code><br><code>rm -rf ~/.sdkman</code></pre>
                     The last step involves editing and removing the initialisation snippet from your
-                    <code>.bashrc</code>, <code>.bash_profile</code> and/or <code>.profile</code>
-                    files. If you use ZSH, remove it from the <code>.zshrc</code> file. The snippet
+                    <var>.bashrc</var>, <var>.bash_profile</var> and/or <var>.profile</var>
+                    files. If you use ZSH, remove it from the <var>.zshrc</var> file. The snippet
                     of code to be removed looks something like this:
-                    <pre><code>
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-[[ -s "/home/dudette/.sdkman/bin/sdkman-init.sh" ]] && source "/home/dudette/.sdkman/bin/sdkman-init.sh"</code></pre>
+                    <pre>#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!<br>[[ -s "/home/dudette/.sdkman/bin/sdkman-init.sh" ]] && source "/home/dudette/.sdkman/bin/sdkman-init.sh"</pre>
                     Once removed, you have successfully uninstalled SDKMAN! from your machine.
                 </article>
                 <article><h3>Installing to a Custom Location</h3>It is possible to install SDKMAN!
-                    to a custom location other than <code>$HOME/.sdkman</code>. This can be achieved
-                    by exporting your custom location as <code>SDKMAN_DIR</code> prior to
+                    to a custom location other than <var>$HOME/.sdkman</var>. This can be achieved
+                    by exporting your custom location as <var>SDKMAN_DIR</var> prior to
                     installing.<br/>Simply open a new terminal and enter:
-                    <pre><code>$ export SDKMAN_DIR="/usr/local/sdkman" && curl -s "https://get.sdkman.io" | bash</code></pre>
+                    <pre><code>export SDKMAN_DIR="/usr/local/sdkman" && curl -s "https://get.sdkman.io" | bash</code></pre>
                     For this to work it is vital that your user has full access rights to this
                     folder.It is also important that the folder does not exist as SDKMAN! will
                     attempt to create it.
@@ -80,9 +76,9 @@ $ rm -rf ~/.sdkman</code></pre>
                 <article><h3>Installing without Modifying Shell Config</h3>There are situations where
                     it isn't appropriate for the installer to modify your shell config automatically,
                     such as unattended installs or when reinstalling.  In those situations, appending
-                    <code>rcupdate=false</code> as a parameter when downloading the installer will cause
+                    <var>rcupdate=false</var> as a parameter when downloading the installer will cause
                     it to skip that portion of the installation process.
-                    <pre><code>$ curl -s "https://get.sdkman.io?rcupdate=false" | bash</code></pre>
+                    <pre><code>curl -s "https://get.sdkman.io?rcupdate=false" | bash</code></pre>
                 </article>
                 <p>That&apos;s all there is to it! Next we will look at <a href='/usage'>Usage</a>.
                 </p></div>

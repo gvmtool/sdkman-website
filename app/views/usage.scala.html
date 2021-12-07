@@ -38,10 +38,9 @@
                     <p>
                         Install the <strong>latest stable</strong> version of your SDK of choice
                         (say, Java JDK) by running the following command:
-                    <pre><code>$ sdk install java</code></pre>
+                    <pre><code>sdk install java</code></pre>
                     You will see something like the following output:
                     <pre>
-                                <code>
 Downloading: java 8u111
 
 In progress...
@@ -49,26 +48,24 @@ In progress...
 ######################################################################## 100.0%
 
 Installing: java 8u111
-Done installing!
-</code>
-                            </pre>
+Done installing!</pre>
                     Now you will be prompted if you want this version to be set as
                     <strong>default.</strong>
-                    <pre><code>Do you want java 8u111 to be set as default? (Y/n):</code></pre>
+                    <pre>Do you want java 8u111 to be set as default? (Y/n):</pre>
                     Answering <em>yes</em> (or <em>hitting enter</em>) will ensure that all
                     subsequent shells opened will have this version of the SDK in use by default.
-                    <pre><code>Setting java 8u111 as default.</code></pre>
+                    <pre>Setting java 8u111 as default.</pre>
                     </p><a name='installspecific'></a><h4>Specific Version</h4>
                     <p>
                         Need a <strong>specific</strong> version of an SDK? Simply qualify the
                         version you require:
-                    <pre><code>$ sdk install scala 2.12.1</code></pre>
+                    <pre><code>sdk install scala 2.12.1</code></pre>
                     All subsequent steps same as above.
                     </p><a name='localversion'></a><h4>Install Local Version(s)</h4>
                     <p>
                         Using a snapshot version? Already have a local installation? Setup a local version by specifying the path to the local installation:
-                    <pre><code>$ sdk install groovy 3.0.0-SNAPSHOT /path/to/groovy-3.0.0-SNAPSHOT</code></pre>
-                    <pre><code>$ sdk install java 10-zulu /Library/Java/JavaVirtualMachines/zulu-10.jdk/Contents/Home</code></pre>
+                    <pre><code>sdk install groovy 3.0.0-SNAPSHOT /path/to/groovy-3.0.0-SNAPSHOT</code></pre>
+                    <pre><code>sdk install java 10-zulu /Library/Java/JavaVirtualMachines/zulu-10.jdk/Contents/Home</code></pre>
                     Note that the local version name (<em>3.0.0-SNAPSHOT</em> and
                     <em>10-zulu</em> in the examples above) must be a unique name
                     which is not already in the list of available version names.
@@ -80,7 +77,7 @@ Done installing!
                     <h2>Remove Version</h2>
                     <p>
                         Remove an installed version.
-                    <pre><code>$ sdk uninstall scala 2.11.6</code></pre>
+                    <pre><code>sdk uninstall scala 2.11.6</code></pre>
                     Note that removing a local version will not remove the local installation.
                     </p>
                 </article>
@@ -90,12 +87,12 @@ Done installing!
                     <h2>List Candidates</h2>
                     <p>
                         To get a listing of available Candidates:
-                    <pre><code>$ sdk list</code></pre>
+                    <pre><code>sdk list</code></pre>
                     This will render a searchable alphabetic list with name, current stable default
                     version, website URL, description and easy install command for each Candidate.
-                    The output is piped to <code>less</code> so standard keyboard shortcuts may be
-                    used with <code>q</code> to exit.
-                    <pre><code>
+                    The output is piped to <var>less</var> so standard keyboard shortcuts may be
+                    used with <var>q</var> to exit.
+                    <pre>
 ================================================================================
 Available Candidates
 ================================================================================
@@ -113,12 +110,10 @@ application powerful features, including scripting capabilities, Domain-Specific
 Language authoring, runtime and compile-time meta-programming and functional
 programming.
 
-                                        $ sdk install groovy
+                                                            $ sdk install groovy
 --------------------------------------------------------------------------------
 Scala (2.11.7)                                        http://www.scala-lang.org/
-...
-</code>
-                            </pre>
+...</pre>
                     </p>
                 </article>
                 <br/>
@@ -127,10 +122,10 @@ Scala (2.11.7)                                        http://www.scala-lang.org/
                     <h2>List Versions</h2>
                     <p>
                         To get a listing of Candidate Versions:
-                    <pre><code>$ sdk list groovy</code></pre>
+                    <pre><code>sdk list groovy</code></pre>
                     This will result in a list view showing the available, local, installed and
                     current versions of the SDK.
-                    <pre><code>
+                    <pre>
 ================================================================================
 Available Groovy Versions
 ================================================================================
@@ -155,8 +150,7 @@ Available Groovy Versions
 * - installed
 > - currently in use
 ================================================================================
-</code>
-                            </pre>
+</pre>
                     </p>
                 </article>
                 <br/>
@@ -165,7 +159,7 @@ Available Groovy Versions
                     <h2>Use Version</h2>
                     <p>
                         Choose to use a given version in the current terminal:
-                    <pre><code>$ sdk use scala 2.12.1</code></pre>
+                    <pre><code>sdk use scala 2.12.1</code></pre>
                     It is important to realise that this will switch the candidate version <strong>for
                     the current shell only</strong>. To make this change permanent, use the <a
                         href='#default'>default</a> command instead.
@@ -177,7 +171,7 @@ Available Groovy Versions
                     <h2>Default Version</h2>
                     <p>
                         Chose to make a given version the default:
-                    <pre><code>$ sdk default scala 2.11.6</code></pre>
+                    <pre><code>sdk default scala 2.11.6</code></pre>
                     This will ensure that all subsequent shells will start with version 2.11.6 in
                     use.
                     </p>
@@ -188,13 +182,9 @@ Available Groovy Versions
                     <h2>Current Version(s)</h2>
                     <p>
                         To see what is currently in use for a Candidate:
-                    <pre><code>
-$ sdk current java
-Using java version 8u111
-</code></pre>
+                    <pre><code>sdk current java<br>Using java version 8u111</code></pre>
                     To see what is currently in use for <strong>all</strong> Candidates:
-                    <pre><code>
-$ sdk current
+                    <pre><code>sdk current
 Using:
 groovy: 2.4.7
 java: 8u111
@@ -208,33 +198,29 @@ scala: 2.12.1
                     <h2>Env Command</h2>
                     <p>
                     Want to switch to a specific JDK or SDK every time you visit a project?
-                    This can be achieved through an <code>.sdkmanrc</code> file in the base
+                    This can be achieved through an <var>.sdkmanrc</var> file in the base
                     directory of your project. This file can be generated automatically by
                     issuing the following command:
-                    <pre><code>$ sdk env init</code></pre>
+                    <pre><code>sdk env init</code></pre>
                     A config file with the following content has now been created in the
                     current directory:
-                    <pre><code># Enable auto-env through the sdkman_auto_env config
+                    <pre># Enable auto-env through the sdkman_auto_env config
 # Add key=value pairs of SDKs to use below
-java=x.y.z.hs-adpt</code></pre>
+java=x.y.z.hs-adpt</pre>
                     The file is pre-populated with the current JDK version in use, but can
                     contain as may key-value pairs of supported SDKs as needed.
-                    To switch to the configuration present in your <code>.sdkmanrc</code> file,
+		    To switch to the configuration present in your <var>.sdkmanrc</var> file,
                     simply issue the following command:
                     <pre><code>sdk env</code></pre>
                     You should see output that looks something like this:
-                    <pre><code>Using java version x.y.z.hs-adpt in this shell.</code></pre>
+                    <pre>Using java version x.y.z.hs-adpt in this shell.</pre>
                     Your path has now also been updated to use any of these SDKs in your current shell.
                     When leaving a project, you may want to reset the SDKs to their default version.
                     This can be achieved by entering:
-                    <pre><code>
-$ sdk env clear
-Restored java version to x.y.z.hs-adpt (default)
-                    </code></pre>
+                    <pre><code>sdk env clear<br>Restored java version to x.y.z.hs-adpt (default)</code></pre>
                     After checking out a new project, you may be missing some SDKs specified in the project's
-                    <code>.sdkmanrc</code> file. To install these missings SDKs, just type:
-                    <pre><code>
-$ sdk env install
+                    <var>.sdkmanrc</var> file. To install these missings SDKs, just type:
+                    <pre><code>sdk env install
 
 Downloading: java x.y.z.hs-adpt
 
@@ -249,8 +235,8 @@ Done repackaging...
 Installing: java x.y.z.hs-adpt
 Done installing!
                 </code></pre>
-                    Do you want to switch SDK versions automatically when you <code>cd</code> into a
-                    directory? This can be done by setting the <code>sdkman_auto_env=true</code> in
+                    Do you want to switch SDK versions automatically when you <var>cd</var> into a
+                    directory? This can be done by setting the <var>sdkman_auto_env=true</var> in
                     the SDKMAN configuration.
                     Note that this will also reset any project-specific SDKs to their default version
                     when leaving the directory.
@@ -262,14 +248,12 @@ Done installing!
                     <h2>Upgrade Version(s)</h2>
                     <p>
                         To see what is currently out of date for a Candidate on your system:
-                    <pre><code>
-$ sdk upgrade springboot
+                    <pre><code>sdk upgrade springboot
 Upgrade:
 springboot (1.2.4.RELEASE, 1.2.3.RELEASE < 1.2.5.RELEASE)
 </code></pre>
                     To see what is outdated for <strong>all</strong> Candidates:
-                    <pre><code>
-$ sdk upgrade
+                    <pre><code>sdk upgrade
 Upgrade:
 gradle (2.3, 1.11, 2.4, 2.5 < 2.6)
 grails (2.5.1 < 3.0.4)
@@ -283,7 +267,7 @@ springboot (1.2.4.RELEASE, 1.2.3.RELEASE < 1.2.5.RELEASE)
                     <h2>SDKMAN! Version</h2>
                     <p>
                         Display the current version of SDKMAN!:
-                    <pre><code>$ sdk version</code></pre>
+                    <pre><code>sdk version</code></pre>
                     </p>
                 </article>
                 <br/>
@@ -292,8 +276,7 @@ springboot (1.2.4.RELEASE, 1.2.3.RELEASE < 1.2.5.RELEASE)
                     <h2>Broadcast Messages</h2>
                     <p>
                         Get the latest SDK release notifications on the command line:
-                    <pre><code>
-$ sdk broadcast
+                    <pre><code>sdk broadcast
 ==== BROADCAST =================================================================
 * 06/12/16: Scala 2.12.1 released on SDKMAN! #scala
 * 23/11/16: Gradle 3.2.1 released on SDKMAN! #gradle
@@ -313,18 +296,16 @@ $ sdk broadcast
                         Initially called <em>Aeroplane Mode</em>, this allows SDKMAN! to function
                         when working offline. It has a parameter that can be passed
                         to<em>enable</em> or <em>disable</em> the offline mode.
-                    <pre><code>
-$ sdk offline enable
+                    <pre><code>sdk offline enable
 Forced offline mode enabled.
-
-$ sdk offline disable
+</code>
+<code>sdk offline disable
 Online mode re-enabled!
 </code></pre>
                     When operating in <strong>offline</strong> mode, most commands will still work
                     even though they will operate in a scaled down capacity. An example is the list
                     command, which will only display the currently installed and active version(s):
-                    <pre><code>
-$ sdk list groovy
+                    <pre><code>sdk list groovy
 ------------------------------------------------------------
 Offline Mode: only showing installed groovy versions
 ------------------------------------------------------------
@@ -346,10 +327,10 @@ Offline Mode: only showing installed groovy versions
                     <h2>Self-Update</h2>
                     <p>
                         Installs a new version of SDKMAN! if available.
-                    <pre><code>$ sdk selfupdate</code></pre>
+                    <pre><code>sdk selfupdate</code></pre>
                     If no new version is available an appropriate message will be displayed.
                     Re-installation may be forced by passing the force parameter to the command:
-                    <pre><code>$ sdk selfupdate force</code></pre>
+                    <pre><code>sdk selfupdate force</code></pre>
                     Automatic daily checks for new versions of SDKMAN! will also be performed on the
                     behalf of the user.
                     </p>
@@ -367,12 +348,12 @@ Offline Mode: only showing installed groovy versions
                         cache will be refreshed and new candidates will become available for
                         installation:
 
-                    <pre><code>
+                    <pre>
 WARNING: SDKMAN is out-of-date and requires an update.
 
-$ sdk update
+<code>sdk update
 Adding new candidates(s): kotlin
-                    </code></pre>
+</code></pre>
                     </p>
                 </article>
                 <br/>
@@ -384,19 +365,19 @@ Adding new candidates(s): kotlin
                         state.The flush command helps with this and allows for the following to be
                         performed:
                     <h4>Flush storage</h4>
-                    <pre><code>$ sdk flush</code></pre>
+                    <pre><code>sdk flush</code></pre>
                     This flushes out all archives and the temporary storage folder, but not
                     the broadcast cache.
                     <h4>Broadcast</h4>
-                    <pre><code>$ sdk flush broadcast</code></pre>
+                    <pre><code>sdk flush broadcast</code></pre>
                     Clears out the broadcast cache, downloading the latest available news on next
                     command invocation.
                     <h4>Archives</h4>
-                    <pre><code>$ sdk flush archives</code></pre>
+                    <pre><code>sdk flush archives</code></pre>
                     Cleans the cache containing all downloaded SDK binaries. This can take up a lot
                     of space so is worth clearing out from time to time!
                     <h4>Temporary Folder</h4>
-                    <pre><code>$ sdk flush tmp</code></pre>
+                    <pre><code>sdk flush tmp</code></pre>
                     Clears out the staging work folder used when installing new versions of
                     candidates and SDKMAN! itself.
                     </p>
@@ -407,9 +388,9 @@ Adding new candidates(s): kotlin
                     <h2>Home</h2>
                     <p>
                         When using SDKMAN in scripts, it is often useful to get the absolute
-                        path of where an SDK resides (similar to how the <code>java_home</code>
-                        command works on macOS). For this we have the <code>home</code> command.
-                        <pre><code>$ sdk home java 11.0.7.hs-adpt
+                        path of where an SDK resides (similar to how the <var>java_home</var>
+                        command works on macOS). For this we have the <var>home</var> command.
+                        <pre><code>sdk home java 11.0.7.hs-adpt
 /home/somedude/.sdkman/candidates/java/11.0.7.hs-adpt</code></pre>
                     </p>
                 </article>
@@ -419,9 +400,9 @@ Adding new candidates(s): kotlin
                     <h2>Help</h2>
                     <p>
                         You can get basic help by running the following command:
-                    <pre><code>$ sdk help</code></pre>
+                    <pre><code>sdk help</code></pre>
                     This should yield something like:
-                    <pre><code>
+                    <pre>
 Usage:  sdk &lt;command&gt; [candidate] [version]
         sdk offline &lt;enable|disable&gt;
 
@@ -442,8 +423,7 @@ Usage:  sdk &lt;command&gt; [candidate] [version]
         selfupdate        [force]
         update
         flush             [archives|tmp|broadcast|version]
-        ...
-                    </code></pre>
+        ...</pre>
                     </p>
                     <hr class='divider'/>
                 </article>
@@ -451,10 +431,10 @@ Usage:  sdk &lt;command&gt; [candidate] [version]
                     <a name='config'></a>
                     <h2>Configuration</h2>
                     <p>
-                        Configuration can be found in the <code>~/.sdkman/etc/config</code> file. To edit the
-                        configuration, the <code>sdk config</code> command may be issued to edit this file
+                        Configuration can be found in the <var>~/.sdkman/etc/config</var> file. To edit the
+                        configuration, the <var>sdk config</var> command may be issued to edit this file
                         in the system editor. The following configurations are available:
-                        <pre><code>
+                        <pre>
 # make sdkman non-interactive, preferred for CI environments
 sdkman_auto_answer=true|false
 
@@ -488,7 +468,7 @@ sdkman_rosetta2_compatible=true|false
 
 # enable bash or zsh auto-completion
 sdkman_auto_complete=true|false
-</code> </pre>
+</pre>
                     </p>
                 </article>
                 <br/></div>
