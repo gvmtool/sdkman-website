@@ -90,8 +90,8 @@ Done installing!</pre>
                     <pre><code>sdk list</code></pre>
                     This will render a searchable alphabetic list with name, current stable default
                     version, website URL, description and easy install command for each Candidate.
-                    The output is piped to <span class="mono-highlight">less</span> so standard keyboard shortcuts may be
-                    used with <span class="mono-highlight">q</span> to exit.
+                    The output is piped to <var>less</var> so standard keyboard shortcuts may be
+                    used with <var>q</var> to exit.
                     <pre>
 ================================================================================
 Available Candidates
@@ -198,7 +198,7 @@ scala: 2.12.1
                     <h2>Env Command</h2>
                     <p>
                     Want to switch to a specific JDK or SDK every time you visit a project?
-                    This can be achieved through an <span class="mono-highlight">.sdkmanrc</span> file in the base
+                    This can be achieved through an <var>.sdkmanrc</var> file in the base
                     directory of your project. This file can be generated automatically by
                     issuing the following command:
                     <pre><code>sdk env init</code></pre>
@@ -209,7 +209,7 @@ scala: 2.12.1
 java=x.y.z.hs-adpt</pre>
                     The file is pre-populated with the current JDK version in use, but can
                     contain as may key-value pairs of supported SDKs as needed.
-		    To switch to the configuration present in your <span class="mono-highlight">.sdkmanrc</span> file,
+		    To switch to the configuration present in your <var>.sdkmanrc</var> file,
                     simply issue the following command:
                     <pre><code>sdk env</code></pre>
                     You should see output that looks something like this:
@@ -219,7 +219,7 @@ java=x.y.z.hs-adpt</pre>
                     This can be achieved by entering:
                     <pre><code>sdk env clear<br>Restored java version to x.y.z.hs-adpt (default)</code></pre>
                     After checking out a new project, you may be missing some SDKs specified in the project's
-                    <span class="mono-highlight">.sdkmanrc</span> file. To install these missings SDKs, just type:
+                    <var>.sdkmanrc</var> file. To install these missings SDKs, just type:
                     <pre><code>sdk env install
 
 Downloading: java x.y.z.hs-adpt
@@ -235,8 +235,8 @@ Done repackaging...
 Installing: java x.y.z.hs-adpt
 Done installing!
                 </code></pre>
-                    Do you want to switch SDK versions automatically when you <span class="mono-highlight">cd</span> into a
-                    directory? This can be done by setting the <span class="mono-highlight">sdkman_auto_env=true</span> in
+                    Do you want to switch SDK versions automatically when you <var>cd</var> into a
+                    directory? This can be done by setting the <var>sdkman_auto_env=true</var> in
                     the SDKMAN configuration.
                     Note that this will also reset any project-specific SDKs to their default version
                     when leaving the directory.
@@ -388,8 +388,8 @@ Adding new candidates(s): kotlin
                     <h2>Home</h2>
                     <p>
                         When using SDKMAN in scripts, it is often useful to get the absolute
-                        path of where an SDK resides (similar to how the <span class="mono-highlight">java_home</span>
-                        command works on macOS). For this we have the <span class="mono-highlight">home</span> command.
+                        path of where an SDK resides (similar to how the <var>java_home</var>
+                        command works on macOS). For this we have the <var>home</var> command.
                         <pre><code>sdk home java 11.0.7.hs-adpt
 /home/somedude/.sdkman/candidates/java/11.0.7.hs-adpt</code></pre>
                     </p>
@@ -431,8 +431,8 @@ Usage:  sdk &lt;command&gt; [candidate] [version]
                     <a name='config'></a>
                     <h2>Configuration</h2>
                     <p>
-                        Configuration can be found in the <span class="mono-highlight">~/.sdkman/etc/config</span> file. To edit the
-                        configuration, the <span class="mono-highlight">sdk config</span> command may be issued to edit this file
+                        Configuration can be found in the <var>~/.sdkman/etc/config</var> file. To edit the
+                        configuration, the <var>sdk config</var> command may be issued to edit this file
                         in the system editor. The following configurations are available:
                         <pre>
 # make sdkman non-interactive, preferred for CI environments

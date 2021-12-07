@@ -68,7 +68,7 @@ https://vendors.sdkman.io/default</code></pre>
                     </p><br/>
                     <p><h4>Broadcast a Structured Message</h4>This will result in a structured
                     message announcement on social media and SDKMAN! CLI. The result will look
-                    something like: <span class="mono-highlight">grails 3.0.0 available for download. https://git.io/release</span>.
+                    something like: <var>grails 3.0.0 available for download. https://git.io/release</var>.
 					The url can point to the github release page or the version's changelog.
                     This message will be announced to the broadcast channel of SDKMAN! CLI, as well
                     as on the <a href='https://www.twitter.com/sdkman_'>@@sdkman_</a> Twitter feed.
@@ -87,16 +87,16 @@ https://vendors.sdkman.io/announce/struct</code></pre>
                         using our Gradle plugin. The plugin allows the release to be done as a side
                         effect of your CI build! It exposes several useful tasks like:
                     <ul>
-		        <li><span class="mono-highlight">sdkReleaseVersion</span></li>
-		        <li><span class="mono-highlight">sdkDefaultVersion</span></li>
-		        <li><span class="mono-highlight">sdkAnnounceVersion</span></li>
+		        <li><var>sdkReleaseVersion</var></li>
+		        <li><var>sdkDefaultVersion</var></li>
+		        <li><var>sdkAnnounceVersion</var></li>
                     </ul>
                     It also exposes some convenience tasks that roll the above into single tasks:
                     <ul>
-                        <li><span class="mono-highlight">sdkMajorRelease</span>: performs release, default and structured
+                        <li><var>sdkMajorRelease</var>: performs release, default and structured
                             announce
                         </li>
-                        <li><span class="mono-highlight">sdkMinorRelease</span>: performs release and structured announce,
+                        <li><var>sdkMinorRelease</var>: performs release and structured announce,
                             <em>no</em> default
                         </li>
                     </ul>
@@ -109,16 +109,16 @@ https://vendors.sdkman.io/announce/struct</code></pre>
                         using our Maven plugin. The plugin allows the release to be done as a side
                         effect of your CI build! It exposes several useful goals like:
                     <ul>
-		        <li> <span class="mono-highlight">release</span></li>
-                        <li> <span class="mono-highlight">defaultease</span></li>
-			<li> <span class="mono-highlight">announce</span></li>
+		        <li> <var>release</var></li>
+                        <li> <var>defaultease</var></li>
+			<li> <var>announce</var></li>
                     </ul>
                     It also exposes some convenience goals that roll the above into single goals:
                     <ul>
-			<li><span class="mono-highlight">major-release</span>: performs release, default and structured
+			<li><var>major-release</var>: performs release, default and structured
                             announce
                         </li>
-                        <li><span class="mono-highlight">minor-release</span>: performs release and structured announce,
+                        <li><var>minor-release</var>: performs release and structured announce,
                             <em>no</em> default
                         </li>
                     </ul>
