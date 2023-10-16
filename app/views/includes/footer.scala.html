@@ -1,8 +1,6 @@
-@import java.time.format.DateTimeFormatter
-@import java.time.LocalDate
 <footer id='footer'>
     <div class='row'>
-        <div class='clearfix'>&copy; 2012 - @DateTimeFormatter.ofPattern("YYYY").format(LocalDate.now) SDKMAN! is Open Source Software licensed under <a
+        <div class='clearfix'>&copy; 2012 - @java.time.Year.now.getValue SDKMAN! is Open Source Software licensed under <a
                 href='http://www.apache.org/licenses/LICENSE-2.0.html'>Apache 2</a></div>
         <div class='clearfix'>Logos and additional Design by <a href='https://github.com/dmesu'>Daida
             Medina</a></div>
