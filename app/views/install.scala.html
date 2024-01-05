@@ -13,9 +13,13 @@
                     Plus, it's compatible with both Bash and ZSH shells.</p>
                 <p>Just launch a new terminal and type in:</p>
                 <pre><code>$ curl -s "https://get.sdkman.io" | bash</code></pre>
-                <p>Follow the on-screen instructions to wrap up the installation. Afterward, open a new terminal or run
+                <p>Follow the on-screen instructions to wrap up the installation, they may diverge
+                    from system to system.</p>
+                <p>For example on Linux systems open a new terminal and run
                     the following in the same shell:</p>
                 <pre><code>$ source "$HOME/.sdkman/bin/sdkman-init.sh"</code></pre>
+                <p>And on Mac with homebrew, open a new terminal and run the following in the same shell:</p>
+                <pre><code>$ source "/opt/homebrew/opt/sdkman-cli/libexec/bin/sdkman-init.sh"</code></pre>
                 <p>Lastly, run the following snippet to confirm the installation's success:</p>
                 <pre><code>$ sdk version</code></pre>
                 <p>You should see output containing the latest script and native versions:</p>
