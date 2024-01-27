@@ -1,55 +1,66 @@
 @()(implicit request: Request[AnyContent])
 @main(title = "Vendors", request) {
-<div id='content' class='page-1'>
+<div id='content' class='page-wrapper container'>
     <div class='row'>
-        <div class='row-fluid'>
-            <div class='col-lg-3'>
-                <ul class='nav-sidebar'>
-                    <li class='active'><a href='/vendors'><strong>Vendors</strong></a></li>
-                    <li><a href='#operations' class='anchor-link'>Operations</a></li>
-                    <li><a href='#access' class='anchor-link'>Access</a></li>
-                    <li><a href='#endpoints' class='anchor-link'>Endpoints</a></li>
-                    <li><a href='#gradleplugin' class='anchor-link'>Gradle SDK Vendor Plugin</a>
-                    <li><a href='#mavenplugin' class='anchor-link'>Maven SDK Vendor Plugin</a>
-                    </li>
+        <div class="col d-none d-lg-block">
+            <div class='nav-sidebar'>
+                <ul id='nav-sidebar' class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href='#vendors'>Vendors</a></li>
+                    <li class="nav-item"><a class="nav-link" href='#operations'>Operations</a></li>
+                    <li class="nav-item"><a class="nav-link" href='#access'>Access</a></li>
+                    <li class="nav-item"><a class="nav-link" href='#endpoints'>Endpoints</a></li>
+                    <li class="nav-item"><a class="nav-link" href='#gradleplugin'>Gradle SDK Vendor Plugin</a></li>
+                    <li class="nav-item"><a class="nav-link" href='#mavenplugin'>Maven SDK Vendor Plugin</a></li>
                 </ul>
-                <br/></div>
-            <div class='col-lg-8 col-lg-pull-0'>
-                <h1><a name='main'></a><i class='fa fa-briefcase'></i> Vendors</h1>
-                @includes.advertisement()
-                <article><p>SDKMAN! is unique in that it empowers SDK Vendors to publish their candidate releases on our
-                    platform. We provide a secure API that can be used to manage all aspects of a release on SDKMAN!.
-                    Such aspects include <strong>Releasing</strong> a new version, setting an existing version as
-                    <strong>Default</strong> (Stable) and <strong>Announcing</strong> the release on the SDKMAN! CLI
-                    broadcast and Twitter feed.</p></article>
-                <article><a name='operations'></a>
-                    <h3>Operations</h3>
-                    The API is a simple JSON REST API that allows three basic operations:
-                    <ul>
-                        <li>Release a new candidate version</li>
-                        <li>Set the default for a candidate</li>
-                        <li>Broadcast a release message</li>
-                    </ul>
-                </article>
-                <article><a name='access'></a>
-                    <h3>Access</h3>
-                    <p>This is a secured API, and requires appropriate credentials to perform the
-                        above operations. Access will be granted on a
-                        case-by-case basis to Vendors who are interested in making their SDK
-                        available on SDKMAN!. If you want to publish your releases on SDKMAN!, please follow the Vendor Onboarding
-                        <a href='https://github.com/sdkman/sdkman-cli/wiki/Vendor-onboarding-process'>wiki page</a>
-                        and then <a href='mailto:info@@sdkman.io'>contact us</a> for help with setting up your credentials.</p></article>
-                <article><a name='endpoints'></a>
-                    <h3>Endpoints</h3>
-                    The simplest way to call the API is by using <a href='https://curl.se/'>curl</a>. Of course,
-                    any other client can be used to perform the API operations.
+            </div>
+        </div>
 
-                    <h4>Release a new Candidate Version</h4>
-                    This will perform a minor release on SDKMAN!. It will
-                    simply add the new candidate version, but will not make it the default version
-                    for that candidate. This endpoint supports <code>POST</code>, <code>PATCH</code>
-                    and <code>DELETE</code> HTTP methods.
-                    <pre><code>
+        <div class='col col-lg-9' data-bs-spy="scroll" data-bs-target="nav-sidebar" data-bs-smooth-scroll="true" data-bs-root-margin="0% 0% -50%" tabindex="0">
+            <h1 id="vendors">Vendors</h1>
+            @includes.advertisement()
+
+            <article>
+                <p>SDKMAN! is unique in that it empowers SDK Vendors to publish their candidate releases on our
+                platform. We provide a secure API that can be used to manage all aspects of a release on SDKMAN!.
+                Such aspects include <strong>Releasing</strong> a new version, setting an existing version as
+                <strong>Default</strong> (Stable) and <strong>Announcing</strong> the release on the SDKMAN! CLI
+                broadcast and Twitter feed.</p>
+            </article>
+            <br>
+
+            <article>
+                <h3 id="operations">Operations</h3>
+                The API is a simple JSON REST API that allows three basic operations:
+                <ul>
+                    <li>Release a new candidate version</li>
+                    <li>Set the default for a candidate</li>
+                    <li>Broadcast a release message</li>
+                </ul>
+            </article>
+            <br>
+
+            <article>
+                <h3 id="access">Access</h3>
+                <p>This is a secured API, and requires appropriate credentials to perform the
+                    above operations. Access will be granted on a
+                    case-by-case basis to Vendors who are interested in making their SDK
+                    available on SDKMAN!. If you want to publish your releases on SDKMAN!, please follow the Vendor Onboarding
+                    <a href='https://github.com/sdkman/sdkman-cli/wiki/Vendor-onboarding-process'>wiki page</a>
+                    and then <a href='mailto:info@@sdkman.io'>contact us</a> for help with setting up your credentials.</p>
+            </article>
+            <br>
+
+            <article>
+                <h3 id="endpoints">Endpoints</h3>
+                The simplest way to call the API is by using <a href='https://curl.se/'>curl</a>. Of course,
+                any other client can be used to perform the API operations.
+
+                <h4>Release a new Candidate Version</h4>
+                This will perform a minor release on SDKMAN!. It will
+                simply add the new candidate version, but will not make it the default version
+                for that candidate. This endpoint supports <code>POST</code>, <code>PATCH</code>
+                and <code>DELETE</code> HTTP methods.
+                <pre><code>
 curl -X POST \
 -H "Consumer-Key: CONSUMER_KEY" \
 -H "Consumer-Token: CONSUMER_TOKEN" \
@@ -57,68 +68,68 @@ curl -X POST \
 -H "Accept: application/json" \
 -d '{"candidate": "groovy", "version": "2.4.2", "url": "https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-binary-2.4.6.zip"}' \
 https://vendors.sdkman.io/release
-                    </code></pre>
+                </code></pre>
 
-                    <h5>Multi-platform binary distributions</h5>
-                    We support both universal and multi-platform binary distributions. Universal binaries run on all
-                    platforms, so you need to publish only a single SDK archive to our API. Multi-platform APIs are
-                    compiled specifically for the target platform and require an archive per target platform to be
-                    published. We currently support the following platforms:
-                    <ul>
-                        <li>LINUX_64</li>
-                        <li>LINUX_ARM64</li>
-                        <li>LINUX_32</li>
-                        <li>LINUX_ARM32SF</li>
-                        <li>LINUX_ARM32HF</li>
-                        <li>MAC_OSX</li>
-                        <li>MAC_ARM64</li>
-                        <li>WINDOWS_64</li>
-                    </ul>
+                <h5>Multi-platform binary distributions</h5>
+                We support both universal and multi-platform binary distributions. Universal binaries run on all
+                platforms, so you need to publish only a single SDK archive to our API. Multi-platform APIs are
+                compiled specifically for the target platform and require an archive per target platform to be
+                published. We currently support the following platforms:
+                <ul>
+                    <li>LINUX_64</li>
+                    <li>LINUX_ARM64</li>
+                    <li>LINUX_32</li>
+                    <li>LINUX_ARM32SF</li>
+                    <li>LINUX_ARM32HF</li>
+                    <li>MAC_OSX</li>
+                    <li>MAC_ARM64</li>
+                    <li>WINDOWS_64</li>
+                </ul>
 
-                    To indicate the target platform, a <code>platform</code> key with associated platform
-                    should be included in the payload. If no <code>platform</code> is included, we assume the
-                    value to be <code>UNIVERSAL</code>.
+                To indicate the target platform, a <code>platform</code> key with associated platform
+                should be included in the payload. If no <code>platform</code> is included, we assume the
+                value to be <code>UNIVERSAL</code>.
 
-                    <h5>Multi-vendor candidates</h5>
-                    For vendors who wish to publish to a multi-vendor candidate like Java or JMC,
-                    we require the presence of a <em>vendor string</em> in the JSON payload.
-                    This will result in a new version comprised of <code>$version-$vendor</code>,
-                    so in this case it would appear as <code>11.0.10-zulu</code> on SDKMAN!.
+                <h5>Multi-vendor candidates</h5>
+                For vendors who wish to publish to a multi-vendor candidate like Java or JMC,
+                we require the presence of a <em>vendor string</em> in the JSON payload.
+                This will result in a new version comprised of <code>$version-$vendor</code>,
+                so in this case it would appear as <code>11.0.10-zulu</code> on SDKMAN!.
 
-                    <h5>Checksums</h5>
-                    An optional map of <code>checksums</code> may be provided in the payload for each published binary.
-                    Supported checksum algorithms are:
-                    <ul>
-                        <li>MD5</li>
-                        <li>SHA-1</li>
-                        <li>SHA-224</li>
-                        <li>SHA-256</li>
-                        <li>SHA-384</li>
-                        <li>SHA-512</li>
-                    </ul>
+                <h5>Checksums</h5>
+                An optional map of <code>checksums</code> may be provided in the payload for each published binary.
+                Supported checksum algorithms are:
+                <ul>
+                    <li>MD5</li>
+                    <li>SHA-1</li>
+                    <li>SHA-224</li>
+                    <li>SHA-256</li>
+                    <li>SHA-384</li>
+                    <li>SHA-512</li>
+                </ul>
 
-                    <h5>Sample payload</h5>
-                    An example payload demonstrating the release of a multi-platform Java binary
-                    for <code>LINUX_64</code> published by Azul as <code>zulu</code> with two checksums
-                    will look something like this:
-                    <pre><code>
+                <h5>Sample payload</h5>
+                An example payload demonstrating the release of a multi-platform Java binary
+                for <code>LINUX_64</code> published by Azul as <code>zulu</code> with two checksums
+                will look something like this:
+                <pre><code>
 {
-    "candidate": "java",
-    "version": "11.0.10",
-    "vendor": "zulu",
-    "url": "https://cdn.azul.com/zulu/bin/zulu11.45.27-ca-jdk11.0.10-linux_x64.tar.gz",
-    "platform": "LINUX_64",
-    "checksums": {
-        "MD5": "93c9d427af64f2da8c00c9219360815b",
-        "SHA-256": "0bd85593bae021314378f3b146cfe36a6c9b0afd964d897c34201034ace3e785"
-    }
+"candidate": "java",
+"version": "11.0.10",
+"vendor": "zulu",
+"url": "https://cdn.azul.com/zulu/bin/zulu11.45.27-ca-jdk11.0.10-linux_x64.tar.gz",
+"platform": "LINUX_64",
+"checksums": {
+    "MD5": "93c9d427af64f2da8c00c9219360815b",
+    "SHA-256": "0bd85593bae021314378f3b146cfe36a6c9b0afd964d897c34201034ace3e785"
 }
-                    </code></pre>
+}
+                </code></pre>
 
-                    <p><h4>Set existing Version as Default for Candidate</h4>
-                    When calling this endpoint for an existing candidate version, it will make it the default version
-                    for that candidate. This makes a minor release a major release!
-                    <pre><code>
+                <p><h4>Set existing Version as Default for Candidate</h4>
+                When calling this endpoint for an existing candidate version, it will make it the default version
+                for that candidate. This makes a minor release a major release!
+                <pre><code>
 curl -X PUT \
 -H "Consumer-Key: CONSUMER_KEY" \
 -H "Consumer-Token: CONSUMER_TOKEN" \
@@ -126,15 +137,15 @@ curl -X PUT \
 -H "Accept: application/json" \
 -d '{"candidate": "groovy", "version": "2.3.8"}' \
 https://vendors.sdkman.io/default
-                    </code></pre>
-                    <br/>
-                    <p><h4>Broadcast a Structured Message</h4>This will result in a structured
-                    message announcement on social media and SDKMAN! CLI. The result will look
-                    something like: <code>grails 3.0.0 available for download. https://git.io/release</code>.
-					The url can point to the github release page or the version's changelog.
-                    This message will be announced to the broadcast channel of SDKMAN! CLI, as well
-                    as on the <a href='https://www.twitter.com/sdkman_'>@@sdkman_</a> Twitter feed.
-                    <pre><code>
+                </code></pre>
+                <br/>
+                <p><h4>Broadcast a Structured Message</h4>This will result in a structured
+                message announcement on social media and SDKMAN! CLI. The result will look
+                something like: <code>grails 3.0.0 available for download. https://git.io/release</code>.
+                The url can point to the github release page or the version's changelog.
+                This message will be announced to the broadcast channel of SDKMAN! CLI, as well
+                as on the <a href='https://www.twitter.com/sdkman_'>@@sdkman_</a> Twitter feed.
+                <pre><code>
 curl -X POST \
 -H "Consumer-Key: CONSUMER_KEY" \
 -H "Consumer-Token: CONSUMER_TOKEN" \
@@ -142,55 +153,59 @@ curl -X POST \
 -H "Accept: application/json" \
 -d '{"candidate": "grails", "version": "3.0.0", "url": "https://git.io/release"}' \
 https://vendors.sdkman.io/announce/struct
-                    </code></pre>
-                    <br/>
-				</article>
-                <article><a name='gradleplugin'></a>
-                    <h3>Gradle SDK Vendor Plugin</h3>
-                    <p>If fiddling with cURL (or HttpClient) isn’t your thing, you could consider
-                        using our Gradle plugin. The plugin allows the release to be done as a side
-                        effect of your CI build! It exposes several useful tasks like:
-                    <ul>
-                        <li><code>sdkReleaseVersion</code></li>
-                        <li><code>sdkDefaultVersion</code></li>
-                        <li><code>sdkAnnounceVersion</code></li>
-                    </ul>
-                    It also exposes some convenience tasks that roll the above into single tasks:
-                    <ul>
-                        <li><code>sdkMajorRelease</code>: performs release, default and structured
-                            announce
-                        </li>
-                        <li><code>sdkMinorRelease</code>: performs release and structured announce,
-                            <em>no</em> default
-                        </li>
-                    </ul>
-                    For more details of about this plugin, as well as how to configure it, please
-                    refer to the <a href='https://github.com/sdkman/gradle-sdkvendor-plugin'>Github
-                        Page</a> for the project.</p></article>
-                <article><a name='mavenplugin'></a>
-                    <h3>Maven SDK Vendor Plugin</h3>
-                    <p>If fiddling with cURL (or HttpClient) or Gradle isn’t your thing, you could consider
-                        using our Maven plugin. The plugin allows the release to be done as a side
-                        effect of your CI build! It exposes several useful goals like:
-                    <ul>
-                        <li><code>release</code></li>
-                        <li><code>default</code></li>
-                        <li><code>announce</code></li>
-                    </ul>
-                    It also exposes some convenience goals that roll the above into single goals:
-                    <ul>
-                        <li><code>major-release</code>: performs release, default and structured
-                            announce
-                        </li>
-                        <li><code>minor-release</code>: performs release and structured announce,
-                            <em>no</em> default
-                        </li>
-                    </ul>
-                    For more details of about this plugin, as well as how to configure it, please
-                    refer to the <a href='https://github.com/sdkman/sdkman-vendor-maven-plugin'>Github
-                        Page</a> for the project.</p></article>
+                </code></pre>
+            </article>
+            <br>
+
+            <article>
+                <h3 id="gradleplugin">Gradle SDK Vendor Plugin</h3>
+                <p>If fiddling with cURL (or HttpClient) isn’t your thing, you could consider
+                    using our Gradle plugin. The plugin allows the release to be done as a side
+                    effect of your CI build! It exposes several useful tasks like:
+                <ul>
+                    <li><code>sdkReleaseVersion</code></li>
+                    <li><code>sdkDefaultVersion</code></li>
+                    <li><code>sdkAnnounceVersion</code></li>
+                </ul>
+                It also exposes some convenience tasks that roll the above into single tasks:
+                <ul>
+                    <li><code>sdkMajorRelease</code>: performs release, default and structured
+                        announce
+                    </li>
+                    <li><code>sdkMinorRelease</code>: performs release and structured announce,
+                        <em>no</em> default
+                    </li>
+                </ul>
+                For more details of about this plugin, as well as how to configure it, please
+                refer to the <a href='https://github.com/sdkman/gradle-sdkvendor-plugin'>Github
+                    Page</a> for the project.</p>
+            </article>
+            <br>
+
+            <article>
+                <h3 id="mavenplugin">Maven SDK Vendor Plugin</h3>
+                <p>If fiddling with cURL (or HttpClient) or Gradle isn’t your thing, you could consider
+                    using our Maven plugin. The plugin allows the release to be done as a side
+                    effect of your CI build! It exposes several useful goals like:
+                <ul>
+                    <li><code>release</code></li>
+                    <li><code>default</code></li>
+                    <li><code>announce</code></li>
+                </ul>
+                It also exposes some convenience goals that roll the above into single goals:
+                <ul>
+                    <li><code>major-release</code>: performs release, default and structured
+                        announce
+                    </li>
+                    <li><code>minor-release</code>: performs release and structured announce,
+                        <em>no</em> default
+                    </li>
+                </ul>
+                For more details of about this plugin, as well as how to configure it, please
+                refer to the <a href='https://github.com/sdkman/sdkman-vendor-maven-plugin'>Github
+                    Page</a> for the project.</p>
+                </article>
             </div>
         </div>
     </div>
-</div>
 }

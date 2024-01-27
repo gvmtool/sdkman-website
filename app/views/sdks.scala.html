@@ -1,34 +1,33 @@
-
 @import io.sdkman.model.Candidate
-@(candidates: Seq[Candidate])(implicit request: Request[AnyContent]))
+@(candidates: Seq[Candidate])(implicit request: Request[AnyContent])
 @main(title = "Available SDKs", request) {
-<div id='content' class='page-1'>
+<div id='content' class='page-wrapper container'>
     <div class='row'>
-        <div class='row-fluid'>
-            <div class='col-lg-3'>
-                <ul class='nav-sidebar'>
-                    <li class='active'><a href='/sdks'><strong>Available SDKs</strong></a></li>
+        <div class="col d-none d-lg-block">
+            <div class='nav-sidebar'>
+                <ul id='nav-sidebar' class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href='#availablesdks'>Available SDKs</a></li>
                     @for(c <- candidates) {
-                    <li><a href='#@{c.candidate}' class='anchor-link'>@{c.name}</a></li>
+                    <li class="nav-item"><a class="nav-link" href='#@{c.candidate}'>@{c.name}</a></li>
                     }
                 </ul>
             </div>
-            <div class='col-lg-8 col-lg-pull-0'>
-                <h1><a name='main'></a><i class='fa fa-cloud-download'></i> SDK Installation Candidates</h1>
-                @includes.advertisement()
-                <ul>
-                    @for(c <- candidates) {
-                    <a name='@c.candidate'></a>
-                    <li>
-                        <h4>@c.name (@c.default.getOrElse("Coming soon!"))</h4>
-                        <a href='@c.websiteUrl' target='_blank'>@c.websiteUrl</a></br>
-                        <p>@c.description</p>
-                        <code>$ sdk install @c.candidate</code>
-                        <hr/>
-                    </li>
-                    }
-                </ul>
-            </div>
+        </div>
+
+        <div class='col col-lg-9' data-bs-spy="scroll" data-bs-target="nav-sidebar" data-bs-smooth-scroll="true" data-bs-root-margin="-20% 0% -70%" tabindex="0">
+            <h1 id="availablesdks"></a>SDK Installation Candidates</h1>
+            @includes.advertisement()
+            <ul class="list-none pl-0">
+                @for(c <- candidates) {
+                <li id='@c.candidate'>
+                    <h4>@c.name (@c.default.getOrElse("Coming soon!"))</h4>
+                    <a href='@c.websiteUrl' target='_blank'>@c.websiteUrl</a></br>
+                    <p>@c.description</p>
+                    <code>$ sdk install @c.candidate</code>
+                    <hr class="my-5"/>
+                </li>
+                }
+            </ul>
         </div>
     </div>
 </div>

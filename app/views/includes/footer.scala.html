@@ -1,10 +1,16 @@
 @import java.time.format.DateTimeFormatter
 @import java.time.LocalDate
-<footer id='footer'>
-    <div class='row'>
-        <div class='clearfix'>&copy; 2012 - @DateTimeFormatter.ofPattern("YYYY").format(LocalDate.now) SDKMAN! is Open Source Software licensed under <a
-                href='http://www.apache.org/licenses/LICENSE-2.0.html'>Apache 2</a></div>
-        <div class='clearfix'>Logos and additional Design by <a href='https://github.com/dmesu'>Daida
-            Medina</a></div>
+<footer id='footer' class="bg-footer">
+    <div class='container d-flex flex-column align-items-center justify-content-center py-4 fs-7 text-center'>
+        <div>&copy; 2012 - @DateTimeFormatter.ofPattern("YYYY").format(LocalDate.now) SDKMAN! is Open Source Software licensed under 
+            <a href='http://www.apache.org/licenses/LICENSE-2.0.html'>Apache 2</a>
+        </div>
+        <div>Logos and additional Design by <a href='https://github.com/dmesu'>Daida Medina</a></div>
+        <a class="" href='http://status.sdkman.io' target="_blank" rel="noopener noreferrer">
+            <span>Status</span>
+            <svg width="24" height="24" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#3BCF6E" d="M9.875 7.5C9.875 8.81168 8.81168 9.875 7.5 9.875C6.18832 9.875 5.125 8.81168 5.125 7.5C5.125 6.18832 6.18832 5.125 7.5 5.125C8.81168 5.125 9.875 6.18832 9.875 7.5Z" fill="currentColor"></path>
+            </svg>
+        </a>
     </div>
 </footer>

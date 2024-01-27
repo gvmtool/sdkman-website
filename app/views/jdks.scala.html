@@ -1,31 +1,32 @@
 @(jdks: Seq[Jdk])(implicit request: Request[AnyContent])
 @main(title = "JDK Distributions", request) {
-<div id='content' class='page-1'>
+<div id='content' class='page-wrapper container'>
     <div class='row'>
-        <div class='row-fluid'>
-            <div class='col-lg-3'>
-                <ul class='nav-sidebar'>
-                    <li class='active'><a href='/jdks'><strong>Available JDKs</strong></a></li>
+        <div class="col d-none d-lg-block">
+            <div class="nav-sidebar">
+                <ul id="nav-sidebar" class='nav flex-column'>
+                    <li class="nav-item"><a class="nav-link" href='#availablejdks'>Available JDKs</a></li>
                     @for(jdk <- jdks) {
-                    <li><a href='#@{jdk.id}' class='anchor-link'>@{jdk.distribution} - <em>@{jdk.vendor}</em></a></li>
+                    <li class="nav-item"><a class="nav-link" href='#@{jdk.id}'>@{jdk.distribution} - <em>@{jdk.vendor}</em></a></li>
                     }
                 </ul>
             </div>
-            <div class='col-lg-8 col-lg-pull-0'>
-                <h1><a name='main'></a><i class='fa fa-cloud-download'></i> JDK Distributions</h1>
-                @includes.advertisement()
-                <ul>
-                    @for(jdk <- jdks) {
-                    <a name='@jdk.id'></a>
-                    <li>
-                        <h4><a href='@jdk.url' target='_blank'>@jdk.distribution</a> (@jdk.vendor)</h4>
-                        <p>@jdk.description</p>
-                        <code>$ sdk install java x.y.z-@jdk.id</code>
-                        <hr/>
-                    </li>
-                    }
-                </ul>
-            </div>
+        </div>
+
+        <div class='col col-lg-9' data-bs-spy="scroll" data-bs-target="nav-sidebar" data-bs-smooth-scroll="true" data-bs-root-margin="-20% 0% -70%" tabindex="0">
+            <h1 id="availablejdks">JDK Distributions</h1>
+            @includes.advertisement()
+
+            <ul class="list-unstyled">
+                @for(jdk <- jdks) {
+                <li id='@jdk.id'>
+                    <h4><a href='@jdk.url' target='_blank'>@jdk.distribution</a> (@jdk.vendor)</h4>
+                    <p>@jdk.description</p>
+                    <code>$ sdk install java x.y.z-@jdk.id</code>
+                    <hr class="my-5" />
+                </li>
+                }
+            </ul>
         </div>
     </div>
 </div>

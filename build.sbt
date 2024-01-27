@@ -28,6 +28,7 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
   ws,
   guice,
+  caffeine,
   "com.github.sdkman" % "sdkman-mongodb-persistence" % "2.4",
   "com.typesafe.scala-logging" %% "scala-logging" % "3.9.3",
   "com.iheart" %% "ficus" % "1.5.0"

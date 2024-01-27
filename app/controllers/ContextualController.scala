@@ -11,16 +11,26 @@ import javax.inject._
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
+import services.OpenCollectiveService
+import models.Contributor
+
 @Singleton
 class ContextualController @Inject() (
     cc: ControllerComponents,
     applicationRepo: ApplicationRepo,
     candidatesRepo: CandidatesRepo,
-    conf: Config
+    conf: Config,
+    openCollectiveService: OpenCollectiveService
 ) extends AbstractController(cc) {
 
-  val index = Action { implicit request: Request[AnyContent] =>
-    Ok(views.html.index())
+  val index = Action.async { implicit request: Request[AnyContent] =>
+    openCollectiveService.getContributors().map { result => 
+      val data = result.groupBy(_.`type`)
+      val organizationContributors = data.getOrElse("ORGANIZATION", Seq[Contributor]())
+      val individualContributors = data.getOrElse("USER", Seq[Contributor]())
+
+      Ok(views.html.index(organizationContributors, individualContributors))
+    }
   }
 
   val install = Action.async { implicit request: Request[AnyContent] =>
