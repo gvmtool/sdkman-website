@@ -134,4 +134,7 @@ project/plugins/project/
 ### VSCODE ###
 .vscode/
 
+### Mac OS ###
+.DS_Store
+
 # End of https://www.gitignore.io/api/sbt,scala,bloop,metals,intellij+all,playframework

@@ -1,81 +1,74 @@
 @(scriptCliVersion: String, nativeCliVersion: String)(implicit request: Request[AnyContent])
 @main(title = "Installation", request) {
-<div id='content' class='page-1'>
-    <div class='row'>
-        <div class='row-fluid'>
-            <div class='col-lg-3'></div>
-            <div class='col-lg-8 col-lg-pull-0'>
-                <h1><i class='fa fa-cloud-download'></i> Installation</h1>
-                @includes.advertisement()
+<div id='content' class='page-wrapper container'>
+    <h1>Installation</h1>
+    @includes.advertisement()
 
-                <p>Installing SDKMAN! on UNIX is a breeze. It effortlessly sets up on macOS, Linux and Windows (with
-                    WSL).
-                    Plus, it's compatible with both Bash and ZSH shells.</p>
-                <p>Just launch a new terminal and type in:</p>
-                <pre><code>$ curl -s "https://get.sdkman.io" | bash</code></pre>
-                <p>Follow the on-screen instructions to wrap up the installation. Afterward, open a new terminal or run
-                    the following in the same shell:</p>
-                <pre><code>$ source "$HOME/.sdkman/bin/sdkman-init.sh"</code></pre>
-                <p>Lastly, run the following snippet to confirm the installation's success:</p>
-                <pre><code>$ sdk version</code></pre>
-                <p>You should see output containing the latest script and native versions:</p>
-                <pre><code>SDKMAN!
+    <p>Installing SDKMAN! on UNIX is a breeze. It effortlessly sets up on macOS, Linux and Windows (with
+        WSL).
+        Plus, it's compatible with both Bash and ZSH shells.</p>
+    <p>Just launch a new terminal and type in:</p>
+    <pre><code>$ curl -s "https://get.sdkman.io" | bash</code></pre>
+    <p>Follow the on-screen instructions to wrap up the installation. Afterward, open a new terminal or run
+        the following in the same shell:</p>
+    <pre><code>$ source "$HOME/.sdkman/bin/sdkman-init.sh"</code></pre>
+    <p>Lastly, run the following snippet to confirm the installation's success:</p>
+    <pre><code>$ sdk version</code></pre>
+    <p>You should see output containing the latest script and native versions:</p>
+    <pre><code>SDKMAN!
 script: @scriptCliVersion
 native: @nativeCliVersion</code></pre>
 
-                <h3>Windows installation</h3>
-                <p>For Windows, there are two installation routes:</p>
-                <ol>
-                    <li><strong>WSL Approach:</strong> Install Windows Subsystem for Linux (WSL) before attempting
-                        SDKMAN installation. A basic toolset (bash, zip, unzip, curl) is necessary. Most times, it works
-                        out of the box.</li>
-                    <li><strong>Git Bash Solution:</strong> If you use Git Bash for Windows, you'll need to supplement
-                        it with MinGW to have the required toolset for SDKMAN. There are some issues with this approach,
-                        but it works for the most part.</li>
-                </ol>
-                <p><i>Remember, SDKMAN requires a bash environment to run. On Windows, it can't be natively installed;
-                        you need WSL or MSYS+MinGW. We no longer support Cygwin.</p></i>
+    <h3>Windows installation</h3>
+    <p>For Windows, there are two installation routes:</p>
+    <ol>
+        <li><strong>WSL Approach:</strong> Install Windows Subsystem for Linux (WSL) before attempting
+            SDKMAN installation. A basic toolset (bash, zip, unzip, curl) is necessary. Most times, it works
+            out of the box.</li>
+        <li><strong>Git Bash Solution:</strong> If you use Git Bash for Windows, you'll need to supplement
+            it with MinGW to have the required toolset for SDKMAN. There are some issues with this approach,
+            but it works for the most part.</li>
+    </ol>
+    <p><i>Remember, SDKMAN requires a bash environment to run. On Windows, it can't be natively installed;
+            you need WSL or MSYS+MinGW. We no longer support Cygwin.</p></i>
 
-                <h3>Beta channel</h3>
-                <p>Feeling adventurous? We've got a beta channel. New CLI features hit this channel first for trial. You
-                    can join by installing it directly:</p>
-                <pre><code>$ curl -s "https://beta.sdkman.io" | bash</code></pre>
-                <p>To leave the beta channel, simply set <code>sdkman_beta_channel</code> to <code>false</code> in
-                    <code>~/.sdkman/etc/config</code>, then run:
-                </p>
-                <pre><code>$ sdk selfupdate force</code></pre>
+    <h3>Beta channel</h3>
+    <p>Feeling adventurous? We've got a beta channel. New CLI features hit this channel first for trial. You
+        can join by installing it directly:</p>
+    <pre><code>$ curl -s "https://beta.sdkman.io" | bash</code></pre>
+    <p>To leave the beta channel, simply set <code>sdkman_beta_channel</code> to <code>false</code> in
+        <code>~/.sdkman/etc/config</code>, then run:
+    </p>
+    <pre><code>$ sdk selfupdate force</code></pre>
 
-                <h3>Uninstallation</h3>
-                <p>Here is how you go about removing SDKMAN! from your system:</p>
-                <ol>
-                    <li>Optionally backup and then remove the installation:</li>
-                    <pre><code>$ tar zcvf ~/sdkman-backup_$(date +%F-%kh%M).tar.gz -C ~/ .sdkman
+    <h3>Uninstallation</h3>
+    <p>Here is how you go about removing SDKMAN! from your system:</p>
+    <ol>
+        <li>Optionally backup and then remove the installation:</li>
+        <pre><code>$ tar zcvf ~/sdkman-backup_$(date +%F-%kh%M).tar.gz -C ~/ .sdkman
 $ rm -rf ~/.sdkman</code></pre>
-                    <li>Remove initialization snippet from your shell configs.</li>
-                    Edit and remove the initialisation snippet from your
-                    <code>.bashrc</code>, <code>.bash_profile</code> and/or <code>.profile</code>
-                    files. If you use ZSH, remove it from the <code>.zshrc</code> file. The snippet
-                    of code to be removed looks something like this:
-                    <pre><code>#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+        <li>Remove initialization snippet from your shell configs.</li>
+        Edit and remove the initialisation snippet from your
+        <code>.bashrc</code>, <code>.bash_profile</code> and/or <code>.profile</code>
+        files. If you use ZSH, remove it from the <code>.zshrc</code> file. The snippet
+        of code to be removed looks something like this:
+        <pre><code>#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 [[ -s "/home/dudette/.sdkman/bin/sdkman-init.sh" ]] && source "/home/dudette/.sdkman/bin/sdkman-init.sh"</code></pre>
-                    Once removed, you have successfully uninstalled SDKMAN! from your machine.
-                </ol>
+        Once removed, you have successfully uninstalled SDKMAN! from your machine.
+    </ol>
 
-                <h3>Install to a custom location</h3>
-                <p>Lastly, if you want to install SDKMAN! in a custom location, like <code>/usr/local/sdkman</code>,
-                    make sure you have full access rights and that the folder doesn't exist. Export
-                    <code>SDKMAN_DIR</code> before installing:
-                </p>
-                <pre><code>$ export SDKMAN_DIR="/usr/local/sdkman" &amp;&amp; curl -s "https://get.sdkman.io" | bash</code></pre>
+    <h3>Install to a custom location</h3>
+    <p>Lastly, if you want to install SDKMAN! in a custom location, like <code>/usr/local/sdkman</code>,
+        make sure you have full access rights and that the folder doesn't exist. Export
+        <code>SDKMAN_DIR</code> before installing:
+    </p>
+    <pre><code>$ export SDKMAN_DIR="/usr/local/sdkman" &amp;&amp; curl -s "https://get.sdkman.io" | bash</code></pre>
 
-                <h3>Install without modifying shell config</h3>
-                <p>And for installs on CI where shell config modification isn't appropriate, add
-                    <code>rcupdate=false</code>
-                    as a parameter when downloading the installer:</p>
-                <pre><code>$ curl -s "https://get.sdkman.io?rcupdate=false" | bash</code></pre>
+    <h3>Install without modifying shell config</h3>
+    <p>And for installs on CI where shell config modification isn't appropriate, add
+        <code>rcupdate=false</code>
+        as a parameter when downloading the installer:</p>
+    <pre><code>$ curl -s "https://get.sdkman.io?rcupdate=false" | bash</code></pre>
 
-                <p>That's all there is to it! Now let's dive into <a href='/usage'>Usage</a>.</p>
-            </div>
-        </div>
-    </div>
-    }
+    <p>That's all there is to it! Now let's dive into <a href='/usage'>Usage</a>.</p>
+}
