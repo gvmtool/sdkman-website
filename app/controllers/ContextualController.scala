@@ -71,6 +71,16 @@ class ContextualController @Inject() (
       Ok(views.html.sdks(sanitisedCandidates))
     }
   }
+
+  def contributors = Action.async { implicit request: Request[AnyContent] =>
+    openCollectiveService.getContributors().map { result => 
+      val data = result.groupBy(_.`type`)
+      val organizationContributors = data.getOrElse("ORGANIZATION", Seq[Contributor]())
+      val individualContributors = data.getOrElse("USER", Seq[Contributor]())
+
+      Ok(views.html.contributors(organizationContributors, individualContributors))
+    }
+  }
 }
 
 case class Jdk(

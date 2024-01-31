@@ -11,6 +11,7 @@ GET     /usage           controllers.ContextualController.usage
 GET     /vendors         controllers.ContextualController.vendors
 GET     /sdks            controllers.ContextualController.sdks
 GET     /jdks            controllers.ContextualController.jdks
+GET     /contributors    controllers.ContextualController.contributors
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file: String)
