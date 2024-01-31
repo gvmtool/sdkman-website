@@ -72,16 +72,6 @@ pre {
   right: -.75rem !important;
 }
 
-@media (min-width: 576px) {
-  .swiper-button-prev {
-    left: -1.25rem !important;
-  }
-  
-  .swiper-button-next {
-    right: -1.25rem !important;
-  }
-}
-
 .page-wrapper {
   padding-top: 80px;
   padding-bottom: 80px;
@@ -153,7 +143,7 @@ pre {
 
 .hero-section-top-img {
   width: 250px;
-  margin: 0 auto;
+  margin: 80px auto 0;
 }
 
 .hero-section-top-title {
@@ -263,4 +253,21 @@ pre {
 .fs-7 {
   font-size: 14px;
   line-height: 24px;
+}
+
+/* Media queries */
+@media (min-width: 576px) {
+  .swiper-button-prev {
+    left: -1.25rem !important;
+  }
+  
+  .swiper-button-next {
+    right: -1.25rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-section-top-img {
+    margin: 0 auto;
+  }
 }

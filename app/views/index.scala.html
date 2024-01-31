@@ -1,6 +1,10 @@
 @(organizationContributors: Seq[Contributor], individualContributors: Seq[Contributor])(implicit request: Request[AnyContent])
 @main(title = "Home", request) {
 <div id='content'>
+    <div class="position-absolute top-0 end-0">
+        @includes.advertisement()
+    </div>
+
     <section class="home-section">
         <div class="container">
             <div class="hero-section-top">
@@ -32,8 +36,6 @@
                     <code>curl -s "https://get.sdkman.io" | bash</code>
                 </p>
             </div>
-
-            @includes.advertisement()
         </div>
     </section>
 
