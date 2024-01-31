@@ -251,6 +251,10 @@ pre {
   color: var(--bs-secondary);
 }
 
+.open-collective-card {
+  text-decoration: none;
+}
+
 .open-collective-card .card-title {
   font-size: 16px;
   font-weight: 500;
