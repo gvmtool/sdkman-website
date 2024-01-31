@@ -152,7 +152,7 @@ pre {
 }
 
 .hero-section-top-img {
-  width: 160px;
+  width: 250px;
   margin: 0 auto;
 }
 
@@ -177,7 +177,7 @@ pre {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 .hero-section-bottom-title {
