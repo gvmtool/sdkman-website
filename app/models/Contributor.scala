@@ -10,6 +10,7 @@ case class Contributor(
     totalAmountDonated: Int,
     `type`: String,
     description: Option[String],
+    collectiveSlug: Option[String],
     image: String
 )
 

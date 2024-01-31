@@ -27,6 +27,7 @@ class OpenCollectiveWebApi @Inject() (
                           totalAmountDonated
                           type
                           description
+                          collectiveSlug
                           image
                       }
                   }
