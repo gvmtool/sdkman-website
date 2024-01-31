@@ -1,0 +1,22 @@
+@import java.time.format.DateTimeFormatter
+@(contributor: Contributor)
+<article class="card open-collective-card">
+    <div class="card-body">
+        <div class="d-flex align-items-start justify-content-between">
+            <div class="card-avatar">
+                <img src='@contributor.image' alt="logo" />
+            </div>
+    
+            @if(contributor.description.nonEmpty) {
+                <span class="badge text-bg-success">@contributor.description</span>
+            }
+        </div>
+
+        <h3 class="card-title">@contributor.name</h3>
+
+        <div class="d-flex align-items-center justify-content-between">
+            <span class="text-success fs-5 fw-semibold">$ @Math.round(contributor.totalAmountDonated / 100)</span>
+            <span class="text-secondary">since @contributor.since.format(DateTimeFormatter.ofPattern("MMM YYYY"))</span>
+        </div>
+    </div>
+</article>
