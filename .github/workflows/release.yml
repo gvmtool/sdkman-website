@@ -24,7 +24,7 @@ jobs:
         token: ${{ secrets.DIGITALOCEAN_TOKEN }}
     - name: Log in to DigitalOcean Docker Registry
       run: |
-        doctl registry login
+        doctl registry login --expiry-seconds=300
     - name: Publish local Docker image
       run: ./sbt docker:publishLocal
     - name: Push image to DO registry
