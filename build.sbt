@@ -1,10 +1,12 @@
 enablePlugins(JavaServerAppPackaging)
-
 enablePlugins(DockerPlugin)
+enablePlugins(GitVersioning)
 
 name := """sdkman-website"""
 
 organization := "io.sdkman"
+
+git.formattedShaVersion := git.gitHeadCommit.value.map(_.take(7))
 
 Docker / packageName := "registry.digitalocean.com/sdkman/sdkman-website"
 
@@ -34,18 +36,3 @@ libraryDependencies ++= Seq(
   "com.iheart" %% "ficus" % "1.5.0"
 )
 
-import sbtrelease.ReleasePlugin.autoImport.ReleaseTransformations._
-
-releaseProcess := Seq[ReleaseStep](
-  checkSnapshotDependencies,
-  inquireVersions,
-  runClean,
-  runTest,
-  setReleaseVersion,
-  commitReleaseVersion,
-  tagRelease,
-  ReleaseStep(releaseStepTask(publish in Docker)),
-  setNextVersion,
-  commitNextVersion,
-  pushChanges
-)
