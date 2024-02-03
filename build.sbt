@@ -10,6 +10,8 @@ git.formattedShaVersion := git.gitHeadCommit.value.map(_.take(7))
 
 Docker / packageName := "registry.digitalocean.com/sdkman/sdkman-website"
 
+dockerUpdateLatest := true
+
 dockerBaseImage := "openjdk:11"
 
 dockerExposedPorts ++= Seq(9000)
