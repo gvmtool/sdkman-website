@@ -25,11 +25,11 @@ jobs:
     - name: Log in to DigitalOcean Docker Registry
       run: |
         doctl registry login
-    - name: Release
-      run: ./sbt "release with-defaults"
-        #    - name: Push image to DO registry
-        #      run: |
-        #        version=$(sbt version | tail -n 1 | awk -F ' ' '{print $2}')
-        #        docker push registry.digitalocean.com/sdkman/sdkman-website:$version
-        #        docker push registry.digitalocean.com/sdkman/sdkman-website:latest
+    - name: Publish local Docker image
+      run: ./sbt docker:publishLocal
+    - name: Push image to DO registry
+      run: |
+        version=$(sbt version | tail -n 1 | awk -F ' ' '{print $2}')
+        docker push registry.digitalocean.com/sdkman/sdkman-website:$version
+        docker push registry.digitalocean.com/sdkman/sdkman-website:latest
 
