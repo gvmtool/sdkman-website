@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: "Stable Release"
+    name: "Release"
     runs-on: ubuntu-latest
     environment: production
     services:
@@ -15,14 +15,21 @@ jobs:
         ports:
           - 27017:27017
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    - name: Log in to Docker Hub
-      run: |
-        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-    - uses: oleksiyrudenko/gha-git-credentials@v2.1
+    - name: Install doctl
+      uses: digitalocean/action-doctl@v2
       with:
-        token: '${{ secrets.GITHUB_TOKEN }}'
+        token: ${{ secrets.DIGITALOCEAN_TOKEN }}
+    - name: Log in to DigitalOcean Docker Registry
+      run: |
+        doctl registry login
     - name: Release
       run: ./sbt "release with-defaults"
+        #    - name: Push image to DO registry
+        #      run: |
+        #        version=$(sbt version | tail -n 1 | awk -F ' ' '{print $2}')
+        #        docker push registry.digitalocean.com/sdkman/sdkman-website:$version
+        #        docker push registry.digitalocean.com/sdkman/sdkman-website:latest
+

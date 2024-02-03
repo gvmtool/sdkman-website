@@ -6,7 +6,7 @@ name := """sdkman-website"""
 
 organization := "io.sdkman"
 
-Docker / packageName := "sdkman/sdkman-website"
+Docker / packageName := "registry.digitalocean.com/sdkman/sdkman-website"
 
 dockerBaseImage := "openjdk:11"
 
