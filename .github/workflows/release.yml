@@ -29,7 +29,7 @@ jobs:
       run: ./sbt docker:publishLocal
     - name: Push image to DO registry
       run: |
-        version=$(./sbt version | tail -n 1 | awk -F ' ' '{print $2}')
+        version=$(git rev-parse --short HEAD)
         docker push registry.digitalocean.com/sdkman/sdkman-website:$version
         docker push registry.digitalocean.com/sdkman/sdkman-website:latest
 
