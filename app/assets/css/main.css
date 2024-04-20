@@ -41,6 +41,10 @@
   font-family: "Inter", sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 pre {
   background-color: var(--card-bg);
   padding: 16px;
@@ -100,8 +104,8 @@ pre {
 
 .navbar {
   height: 64px;
-  backdrop-filter: blur(50px);
-  opacity: 0.9;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .nav-link > svg {
@@ -253,6 +257,10 @@ pre {
 .fs-7 {
   font-size: 14px;
   line-height: 24px;
+}
+
+.scroll-offset {
+  scroll-margin: 80px 0;
 }
 
 /* Media queries */
