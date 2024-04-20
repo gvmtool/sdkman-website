@@ -19,7 +19,7 @@
 
             <ul class="list-unstyled">
                 @for(jdk <- jdks) {
-                <li id='@jdk.id'>
+                <li id='@jdk.id' class="scroll-offset">
                     <h4><a href='@jdk.url' target='_blank'>@jdk.distribution</a> (@jdk.vendor)</h4>
                     <p>@jdk.description</p>
                     <code>$ sdk install java x.y.z-@jdk.id</code>

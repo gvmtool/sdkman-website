@@ -19,7 +19,7 @@
             @includes.advertisement()
             <ul class="list-none pl-0">
                 @for(c <- candidates) {
-                <li id='@c.candidate'>
+                <li id='@c.candidate' class="scroll-offset">
                     <h4>@c.name (@c.default.getOrElse("Coming soon!"))</h4>
                     <a href='@c.websiteUrl' target='_blank'>@c.websiteUrl</a></br>
                     <p>@c.description</p>
