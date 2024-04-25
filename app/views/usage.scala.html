@@ -40,7 +40,7 @@
             @includes.advertisement()
 
             <article>
-                <h2 id="installdefault">Installing an SDK</h2>
+                <h2 id="installdefault" class="scroll-offset">Installing an SDK</h2>
                 <br>
 
                 <h4>Latest Stable</h4>
@@ -68,7 +68,7 @@ Done installing!
                 <pre><code>Setting java @javaVersion as default.</code></pre>
                 <br>
 
-                <h4 id="installspecific">Specific Version</h4>
+                <h4 id="installspecific" class="scroll-offset">Specific Version</h4>
                 <p>
                     Need a <strong>specific</strong> version of an SDK? Simply qualify the
                     version you require:
@@ -77,7 +77,7 @@ Done installing!
                 <p>All subsequent steps same as above.</p>
                 <br>
 
-                <h4 id="localversion">Install Local Version(s)</h4>
+                <h4 id="localversion" class="scroll-offset">Install Local Version(s)</h4>
                 <p>
                     Using a snapshot version? Already have a local installation? Setup a local version by specifying
                     the path to the local installation:
@@ -93,7 +93,7 @@ Done installing!
             <br>
 
             <article>
-                <h2 id="remove">Remove Version</h2>
+                <h2 id="remove" class="scroll-offset">Remove Version</h2>
                 <p>Remove an installed version.</p>
                 <pre><code>$ sdk uninstall scala @scalaVersion</code></pre>
                 <p>Note that removing a local version will not remove the local installation.</p>
@@ -101,7 +101,7 @@ Done installing!
             <br>
 
             <article>
-                <h2 id="listcandidates">List Candidates</h2>
+                <h2 id="listcandidates" class="scroll-offset">List Candidates</h2>
                 <p>To get a listing of available Candidates:</p>
                 <pre><code>$ sdk list</code></pre>
                 <p>
@@ -136,7 +136,7 @@ $ sdk install java
             <br>
 
             <article>
-                <h2 id="listversions">List Versions</h2>
+                <h2 id="listversions" class="scroll-offset">List Versions</h2>
                 <p>To get a listing of Candidate Versions:</p>
                 <pre><code>$ sdk list groovy</code></pre>
                 <p>
@@ -172,7 +172,7 @@ Available Groovy Versions
             <br>
 
             <article>
-                <h2 id="use">Use Version</h2>
+                <h2 id="use" class="scroll-offset">Use Version</h2>
                 <p>Choose to use a given version in the current terminal:</p>
                 <pre><code>$ sdk use scala @scalaVersion</code></pre>
                 <p>
@@ -183,7 +183,7 @@ Available Groovy Versions
             <br>
 
             <article>
-                <h2 id="default">Default Version</h2>
+                <h2 id="default" class="scroll-offset">Default Version</h2>
                 <p>Chose to make a given version the default:</p>
                 <pre><code>$ sdk default scala @scalaVersion</code></pre>
                 <p>This will ensure that all subsequent shells will start with version @scalaVersion in use.</p>
@@ -191,7 +191,7 @@ Available Groovy Versions
             <br>
 
             <article>
-                <h2 id="current">Current Version(s)</h2>
+                <h2 id="current" class="scroll-offset">Current Version(s)</h2>
                 <p>To see what is currently in use for a Candidate:</p>
 <pre><code>$ sdk current java
 Using java version @javaVersion
@@ -207,7 +207,7 @@ scala: @scalaVersion
             <br>
 
             <article>
-                <h2 id="env">Env Command</h2>
+                <h2 id="env" class="scroll-offset">Env Command</h2>
                 <p>
                     Want to switch to a specific JDK or SDK every time you visit a project?
                     This can be achieved through an <code>.sdkmanrc</code> file in the base
@@ -267,7 +267,7 @@ Done installing!
             <br>
 
             <article>
-                <h2 id="upgrade">Upgrade Version(s)</h2>
+                <h2 id="upgrade" class="scroll-offset">Upgrade Version(s)</h2>
                 <p>To see what is currently out of date for a Candidate on your system:</p>
 <pre><code>$ sdk upgrade springboot
 Upgrade:
@@ -284,7 +284,7 @@ springboot (1.2.4.RELEASE, 1.2.3.RELEASE < @springbootVersion
             <br>
 
             <article>
-                <h2 id="version">SDKMAN! Version</h2>
+                <h2 id="version" class="scroll-offset">SDKMAN! Version</h2>
                 <p>Display the current script and native versions of SDKMAN!:</p>
 <pre><code>$ sdk version
 
@@ -296,7 +296,7 @@ native: 0.1.3
             <br>
 
             <article>
-                <h2 id="offline">Offline Mode</h2>
+                <h2 id="offline" class="scroll-offset">Offline Mode</h2>
                 <p>
                     Initially called <em>Aeroplane Mode</em>, this allows SDKMAN! to function
                     when working offline. It has a parameter that can be passed
@@ -331,7 +331,7 @@ Offline Mode: only showing installed groovy versions
             <br>
 
             <article>
-                <h2 id="selfupdate">Self-Update</h2>
+                <h2 id="selfupdate" class="scroll-offset">Self-Update</h2>
                 <p>Installs a new version of SDKMAN! if available.</p>
                 <pre><code>$ sdk selfupdate</code></pre>
                 <p>
@@ -347,7 +347,7 @@ Offline Mode: only showing installed groovy versions
             <br>
 
             <article>
-                <h2 id="update">Update</h2>
+                <h2 id="update" class="scroll-offset">Update</h2>
                 <p>
                     Periodically SDKMAN! requires a refresh to become aware of new (or removed)
                     candidates.
@@ -366,7 +366,7 @@ Adding new candidates(s): kotlin
             <br>
 
             <article>
-                <h2 id="flush">Flush</h2>
+                <h2 id="flush" class="scroll-offset">Flush</h2>
                 <p>
                     It should rarely be necessary to flush SDKMAN!&apos;s local state.
                     The flush command helps with this, so you don't need to delete any directories.
@@ -381,7 +381,7 @@ Adding new candidates(s): kotlin
             <br>
 
             <article>
-                <h2 id="home">Home</h2>
+                <h2 id="home" class="scroll-offset">Home</h2>
                 <p>
                     When using SDKMAN in scripts, it is often useful to get the absolute
                     path of where an SDK resides (similar to how the <code>java_home</code>
@@ -394,7 +394,7 @@ Adding new candidates(s): kotlin
             <br>
 
             <article>
-                <h2 id="help">Help</h2>
+                <h2 id="help" class="scroll-offset">Help</h2>
                 <p>You can get basic help by running the following command:</p>
                 <pre><code>$ sdk help</code></pre>
                 <p>
@@ -407,7 +407,7 @@ Adding new candidates(s): kotlin
             <br>
 
             <article>
-                <h2 id="config">Configuration</h2>
+                <h2 id="config" class="scroll-offset">Configuration</h2>
                 <p>
                     Configuration can be found in the <code>~/.sdkman/etc/config</code> file. To edit the
                     configuration, the <code>sdk config</code> command may be issued to edit this file
