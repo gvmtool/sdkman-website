@@ -58,8 +58,8 @@
                 <h4>Release a new Candidate Version</h4>
                 This will perform a minor release on SDKMAN!. It will
                 simply add the new candidate version, but will not make it the default version
-                for that candidate. This endpoint supports <code>POST</code>, <code>PATCH</code>
-                and <code>DELETE</code> HTTP methods.
+                for that candidate. This endpoint supports <code>POST</code> and <code>DELETE</code> HTTP methods.
+                The <code>POST</code> endpoint is idempotent.
                 <pre><code>
 curl -X POST \
 -H "Consumer-Key: CONSUMER_KEY" \
