@@ -1,6 +1,6 @@
 :root, [data-bs-theme=light] {
   --bs-primary: #0276c6;
-  --bs-secondary: #46566f;
+  --bs-secondary: #343f52;
   --bs-secondary-rgb: 70, 86, 111;
   --bs-success: #16a34a;
   --bs-success-rgb: 22, 163, 74;
@@ -14,6 +14,7 @@
 }
 
 [data-bs-theme=dark] {
+  --bs-secondary: #8094b6;
   --bs-body-bg: #151f32;
   --bs-emphasis-color-rgb: 154, 171, 202;
 
@@ -250,6 +251,10 @@ pre {
 .open-collective-card .card-title {
   font-size: 16px;
   font-weight: 500;
+}
+
+.open-collective-card-date {
+  color: var(--bs-secondary);
 }
 
 .fs-7 {
