@@ -60,15 +60,13 @@
                 simply add the new candidate version, but will not make it the default version
                 for that candidate. This endpoint supports <code>POST</code> and <code>DELETE</code> HTTP methods.
                 The <code>POST</code> endpoint is idempotent.
-                <pre><code>
-curl -X POST \
+                <pre class="language-shell"><code>curl -X POST \
 -H "Consumer-Key: CONSUMER_KEY" \
 -H "Consumer-Token: CONSUMER_TOKEN" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{"candidate": "groovy", "version": "2.4.2", "url": "https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-binary-2.4.6.zip"}' \
-https://vendors.sdkman.io/release
-                </code></pre>
+https://vendors.sdkman.io/release</code></pre>
 
                 <h5>Multi-platform binary distributions</h5>
                 We support both universal and multi-platform binary distributions. Universal binaries run on all
@@ -112,32 +110,28 @@ https://vendors.sdkman.io/release
                 An example payload demonstrating the release of a multi-platform Java binary
                 for <code>LINUX_64</code> published by Azul as <code>zulu</code> with two checksums
                 will look something like this:
-                <pre><code>
-{
-"candidate": "java",
-"version": "11.0.10",
-"vendor": "zulu",
-"url": "https://cdn.azul.com/zulu/bin/zulu11.45.27-ca-jdk11.0.10-linux_x64.tar.gz",
-"platform": "LINUX_64",
-"checksums": {
-    "MD5": "93c9d427af64f2da8c00c9219360815b",
-    "SHA-256": "0bd85593bae021314378f3b146cfe36a6c9b0afd964d897c34201034ace3e785"
-}
-}
-                </code></pre>
+                <pre class="language-json"><code>{
+    "candidate": "java",
+    "version": "11.0.10",
+    "vendor": "zulu",
+    "url": "https://cdn.azul.com/zulu/bin/zulu11.45.27-ca-jdk11.0.10-linux_x64.tar.gz",
+    "platform": "LINUX_64",
+    "checksums": {
+        "MD5": "93c9d427af64f2da8c00c9219360815b",
+        "SHA-256": "0bd85593bae021314378f3b146cfe36a6c9b0afd964d897c34201034ace3e785"
+    }
+}</code></pre>
 
                 <p><h4>Set existing Version as Default for Candidate</h4>
                 When calling this endpoint for an existing candidate version, it will make it the default version
                 for that candidate. This makes a minor release a major release!
-                <pre><code>
-curl -X PUT \
+                <pre class="language-shell"><code>curl -X PUT \
 -H "Consumer-Key: CONSUMER_KEY" \
 -H "Consumer-Token: CONSUMER_TOKEN" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{"candidate": "groovy", "version": "2.3.8"}' \
-https://vendors.sdkman.io/default
-                </code></pre>
+https://vendors.sdkman.io/default</code></pre>
                 <br/>
                 <p><h4>Broadcast a Structured Message</h4>This will result in a structured
                 message announcement on social media and SDKMAN! CLI. The result will look
@@ -145,15 +139,13 @@ https://vendors.sdkman.io/default
                 The url can point to the github release page or the version's changelog.
                 This message will be announced to the broadcast channel of SDKMAN! CLI, as well
                 as on the <a href='https://www.twitter.com/sdkman_'>@@sdkman_</a> Twitter feed.
-                <pre><code>
-curl -X POST \
+                <pre class="language-shell"><code>curl -X POST \
 -H "Consumer-Key: CONSUMER_KEY" \
 -H "Consumer-Token: CONSUMER_TOKEN" \
 -H "Content-Type: application/json" \
 -H "Accept: application/json" \
 -d '{"candidate": "grails", "version": "3.0.0", "url": "https://git.io/release"}' \
-https://vendors.sdkman.io/announce/struct
-                </code></pre>
+https://vendors.sdkman.io/announce/struct</code></pre>
             </article>
             <br>
 
