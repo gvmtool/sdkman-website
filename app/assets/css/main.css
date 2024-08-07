@@ -45,10 +45,9 @@ body {
 }
 
 pre {
-  background-color: var(--card-bg);
-  padding: 16px;
+  background-color: var(--card-bg) !important;
   border-radius: 8px;
-  margin: 16px 0;
+  margin: 1rem 0 !important;
 }
 
 .swiper-button-prev, .swiper-button-next {
